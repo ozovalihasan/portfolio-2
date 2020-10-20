@@ -2,7 +2,7 @@ $first-color: #46c2fb;
 $second-color: #faac47;
 $third-color: #505562;
 $fourth-color: #737986;
-$fifth-color: #ffffff;
+$fifth-color: #fff;
 $sixth-color: #f5fcfd;
 $seventh-color: #7aafff;
 $eight-color: #ff859b;
@@ -69,7 +69,7 @@ nav {
   z-index: 10;
 
   .profile-picture {
-    background-image: url('hasanozovali.jpg');
+    background-image: url('assets/hasanozovali.jpg');
     background-size: cover;
     width: 50px;
     height: 50px;
@@ -78,37 +78,38 @@ nav {
 
 article {
   margin-bottom: 50px;
+
   h2 {
     top: 10px;
     left: 30px;
   }
 
   .project-image {
-    top: 0px;
+    top: 0;
     height: 100%;
-    background-image: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.25) 0%,
-      rgba(0, 0, 0, 0.05) 98.35%
-    );
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0.05) 98.35%
+      );
   }
 
   .programs > div {
     margin-left: 10px;
     margin-right: 10px;
-    padding-left: auto;
-    padding-right: auto;
   }
 }
 
 header {
   margin-top: 96px;
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       to left,
       rgba($first-color, 0.95) 0%,
       rgba($second-color, 0.95) 100%
     ),
-    url('intro.jpg');
+    url('assets/intro.jpg');
   background-size: cover;
 
   .intro-title {
@@ -140,13 +141,13 @@ form {
   }
 
   html {
-    scroll-padding-top: 0px;
+    scroll-padding-top: 0;
   }
 
   nav {
     position: static;
     width: 20%;
-    height: 0px;
+    height: 0;
 
     .content-nav {
       position: fixed;
@@ -181,6 +182,7 @@ form {
       top: 30px;
       left: 10px;
       visibility: hidden;
+
       > div {
         margin-left: 0.5em;
         margin-right: 0.5em;
@@ -197,9 +199,7 @@ form {
       position: absolute;
       bottom: 20px;
       right: 20px;
-      width: auto;
       margin: 0 auto;
-      padding: 0 auto;
       visibility: hidden;
     }
   }
