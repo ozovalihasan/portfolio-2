@@ -29,6 +29,9 @@ $colors: (
 }
 
 body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 .bold-big-font {
@@ -39,7 +42,7 @@ body {
 article {
   h2 {
     top: 10px;
-    left: 10px;
+    left: 30px;
   }
 
   .project-image {
