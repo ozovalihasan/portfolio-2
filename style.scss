@@ -39,6 +39,23 @@ body {
   font-weight: 700;
 }
 
+
+html {
+  overflow-y: scroll;
+  scrollbar-color: $second-color $first-color;
+}
+
+* {
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: $first-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $second-color;
+}
 article {
   h2 {
     top: 10px;
