@@ -1,0 +1,133 @@
+$first-color: #4658fb;
+$second-color: #fa4768;
+$third-color: #505562;
+$fourth-color: #737986;
+$fifth-color: #ffffff;
+$sixth-color: #f5f8fd;
+$seventh-color: #7aafff;
+$eight-color: #ff859b;
+
+$colors: (
+  first: $first-color,
+  second: $second-color,
+  third: $third-color,
+  fourth: $fourth-color,
+  fifth: $fifth-color,
+  sixth: $sixth-color,
+  seventh: $seventh-color,
+  eight: $eight-color,
+);
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+
+  .text-#{$name} {
+    color: $color;
+  }
+}
+
+body {
+}
+
+article {
+  h2 {
+    top: 10px;
+    left: 10px;
+  }
+
+  .project-image {
+    top: 0px;
+    height: 100%;
+    background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.66) 98.35%
+    );
+  }
+}
+
+.copy-wright {
+  border-top: 1px;
+  border-style: solid;
+  border-color: $second-color;
+}
+
+.intro-title {
+  font-size: 50px;
+}
+
+.intro-subtitle {
+  font-size: 35px;
+}
+
+.intro {
+}
+
+header {
+  margin-top: 96px;
+  background-image: linear-gradient(
+      to left,
+      rgba($first-color, 0.5) 0%,
+      rgba($second-color, 0.5) 100%
+    ),
+    url('project1.jpg');
+}
+
+nav {
+  width: 100%;
+  background-color: $sixth-color;
+  position: fixed;
+  z-index: 10;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    position: static;
+    width: 20%;
+    height: 0px;
+
+    .content-nav {
+      position: fixed;
+      width: 20%;
+    }
+  }
+
+  .content-intro {
+    svg {
+      display: block;
+      fill: $fifth-color;
+    }
+  }
+
+  header.header {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    > * {
+      width: 80%;
+      margin: 0 5vh 0 15vh;
+    }
+  }
+
+  form > input {
+    // margin: 10px;
+  }
+
+  .footer {
+    background-color: transparent;
+
+    .footer-background {
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      background-color: $first-color;
+    }
+  }
+}
