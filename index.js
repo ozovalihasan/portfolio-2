@@ -1,3 +1,10 @@
+function updateVisibility(element, visibility) {
+  const seeProject = element.getElementsByClassName('see-project');
+  seeProject[0].style.visibility = visibility;
+  const programs = element.getElementsByClassName('programs');
+  programs[0].style.visibility = visibility;
+}
+
 function makeVisible(event) {
   updateVisibility(event, 'visible');
 }
@@ -6,32 +13,25 @@ function makeHidden(event) {
   updateVisibility(event, 'hidden');
 }
 
-function updateVisibility(element, visibility) {
-  const seeProject = element.getElementsByClassName('see-project');
-  seeProject[0].style.visibility = visibility;
-  const programs = element.getElementsByClassName('programs');
-  programs[0].style.visibility = visibility;
-}
-
 const projects = document.getElementsByClassName('project');
 
-for (let project of projects) {
-  project.addEventListener('mouseenter', function (event) {
+for (let i = 0; i < projects.length; i += 1) {
+  projects[i].addEventListener('mouseenter', (event) => {
     makeVisible(event.target);
   });
-  project.addEventListener('mouseleave', function (event) {
+  projects[i].addEventListener('mouseleave', (event) => {
     if (window.matchMedia('(min-width: 768px)').matches) {
       makeHidden(event.target);
     }
   });
 }
 
-window.addEventListener('resize', function (params) {
-  for (let project of projects) {
+window.addEventListener('resize', () => {
+  for (let i = 0; i < projects.length; i += 1) {
     if (window.matchMedia('(min-width: 768px)').matches) {
-      makeHidden(project);
+      makeHidden(projects[i]);
     } else {
-      makeVisible(project);
+      makeVisible(projects[i]);
     }
   }
 });
