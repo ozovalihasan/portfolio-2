@@ -124,6 +124,21 @@ nav {
     }
   }
 
+  .programs {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    visibility: hidden;
+  }
+  .see-project {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: auto;
+    margin: 0 auto;
+    padding: 0 auto;
+    visibility: hidden;
+  }
   form > input {
     // margin: 10px;
   }
