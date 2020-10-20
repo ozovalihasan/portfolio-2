@@ -28,10 +28,8 @@ $colors: (
   }
 }
 
-body {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
-  line-height: 1.5;
+a:hover {
+  text-decoration: none;
 }
 
 .bold-big-font {
@@ -39,13 +37,14 @@ body {
   font-weight: 700;
 }
 
+.border-radius {
+  border-radius: 10px;
+}
 
 html {
   overflow-y: scroll;
   scrollbar-color: $second-color $first-color;
-}
-
-* {
+  scroll-padding-top: 110px;
 }
 
 ::-webkit-scrollbar {
@@ -56,7 +55,29 @@ html {
 ::-webkit-scrollbar-thumb {
   background: $second-color;
 }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+nav {
+  width: 100%;
+  background-color: $fifth-color;
+  position: fixed;
+  z-index: 10;
+
+  .profile-picture {
+    background-image: url('hasanozovali.jpg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+  }
+}
+
 article {
+  margin-bottom: 50px;
   h2 {
     top: 10px;
     left: 30px;
@@ -67,47 +88,61 @@ article {
     height: 100%;
     background-image: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.55) 0%,
-      rgba(0, 0, 0, 0.66) 98.35%
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.05) 98.35%
     );
   }
-}
 
-.copy-wright {
-  border-top: 1px;
-  border-style: solid;
-  border-color: $second-color;
-}
-
-.intro-title {
-  font-size: 50px;
-}
-
-.intro-subtitle {
-  font-size: 35px;
-}
-
-.intro {
+  .programs > div {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: auto;
+    padding-right: auto;
+  }
 }
 
 header {
   margin-top: 96px;
   background-image: linear-gradient(
       to left,
-      rgba($first-color, 0.5) 0%,
-      rgba($second-color, 0.5) 100%
+      rgba($first-color, 0.95) 0%,
+      rgba($second-color, 0.95) 100%
     ),
-    url('project1.jpg');
+    url('intro.jpg');
+  background-size: cover;
+
+  .intro-title {
+    font-size: 50px;
+  }
+
+  .intro-subtitle {
+    font-size: 35px;
+  }
 }
 
-nav {
-  width: 100%;
-  background-color: $sixth-color;
-  position: fixed;
-  z-index: 10;
+form {
+  input,
+  textarea {
+    border: 1px solid $fourth-color;
+    outline: none;
+  }
+}
+
+.copy-right {
+  border-top: 1px;
+  border-style: solid;
+  border-color: $second-color;
 }
 
 @media screen and (min-width: 768px) {
+  .intro-links {
+    z-index: 1;
+  }
+
+  html {
+    scroll-padding-top: 0px;
+  }
+
   nav {
     position: static;
     width: 20%;
@@ -119,11 +154,10 @@ nav {
     }
   }
 
-  .content-intro {
-    svg {
-      display: block;
-      fill: $fifth-color;
-    }
+  .intro-background,
+  .footer-background {
+    display: block;
+    fill: $fifth-color;
   }
 
   header.header {
@@ -141,23 +175,33 @@ nav {
     }
   }
 
-  .programs {
-    position: absolute;
-    top: 30px;
-    left: 10px;
-    visibility: hidden;
-  }
-  .see-project {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    width: auto;
-    margin: 0 auto;
-    padding: 0 auto;
-    visibility: hidden;
-  }
-  form > input {
-    // margin: 10px;
+  article {
+    .programs {
+      position: absolute;
+      top: 30px;
+      left: 10px;
+      visibility: hidden;
+      > div {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+      }
+    }
+
+    img {
+      height: 30vw;
+      width: 200px;
+      object-fit: cover;
+    }
+
+    .see-project {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: auto;
+      margin: 0 auto;
+      padding: 0 auto;
+      visibility: hidden;
+    }
   }
 
   .footer {
