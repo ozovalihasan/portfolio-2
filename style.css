@@ -163,7 +163,8 @@ form textarea {
   article img {
     height: 30vw;
     width: 200px;
-    object-fit: cover; }
+    object-fit: cover;
+    background-color: #000; }
   article .project-links {
     position: absolute;
     bottom: 20px;
