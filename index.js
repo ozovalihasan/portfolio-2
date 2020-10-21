@@ -1,5 +1,5 @@
 function updateVisibility(element, visibility) {
-  const seeProject = element.getElementsByClassName('see-project');
+  const seeProject = element.getElementsByClassName('project-links');
   seeProject[0].style.visibility = visibility;
   const programs = element.getElementsByClassName('programs');
   programs[0].style.visibility = visibility;
