@@ -94,8 +94,10 @@ article {
     height: 100%;
     background-image: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.25) 0%,
-      rgba(0, 0, 0, 0.05) 98.35%
+      rgba(#fff, 0.65) 0%,
+      rgba(#fff, 0.55) 10px,
+      rgba(#fff, 0.25) 60px,
+      rgba(#fff, 0) 98.35%
     );
   }
 
@@ -182,7 +184,7 @@ form {
   article {
     .programs {
       position: absolute;
-      top: 30px;
+      top: 50px;
       left: 10px;
       visibility: hidden;
 
