@@ -13,6 +13,17 @@ function makeHidden(event) {
   updateProjectVisibility(event, 'hidden');
 }
 
+const body = document.getElementById('body');
+const loader = document.getElementById('loader');
+
+body.style.visibility = 'hidden';
+loader.style.visibility = 'visible';
+
+window.onload = function () {
+  body.style.visibility = 'visible';
+  loader.style.display = 'none';
+};
+
 const projects = document.getElementsByClassName('project');
 
 for (let i = 0; i < projects.length; i += 1) {
@@ -35,15 +46,3 @@ window.addEventListener('resize', () => {
     }
   }
 });
-
-
-const body = document.getElementById('body');
-const loader = document.getElementById('loader');
-
-body.style.visibility = 'hidden';
-loader.style.visibility = 'visible';
-
-window.onload = function () {
-  body.style.visibility = 'visible';
-  loader.style.display = 'none';
-};
