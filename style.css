@@ -140,6 +140,10 @@ form textarea {
     display: block;
     fill: #fff; }
 
+  .intro-background {
+    height: max(20vh, 550px);
+    width: 100%; }
+
   header.header {
     height: 100%;
     position: absolute;
@@ -149,8 +153,9 @@ form textarea {
     justify-content: center;
     width: 100%; }
     header.header > * {
-      width: 80%;
-      margin: 0 5vh 0 15vh; }
+      width: auto;
+      margin: 0 100px 0 15vw;
+      padding: 0 15vw 0 15vw; }
 
   article .programs {
     position: absolute;

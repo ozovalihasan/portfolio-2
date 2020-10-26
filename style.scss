@@ -165,6 +165,10 @@ form {
     display: block;
     fill: $fifth-color;
   }
+  .intro-background {
+    height: unquote('max(20vh, 550px)');
+    width: 100%;
+  }
 
   header.header {
     height: 100%;
@@ -176,8 +180,9 @@ form {
     width: 100%;
 
     > * {
-      width: 80%;
-      margin: 0 5vh 0 15vh;
+      width: auto;
+      margin: 0 100px 0 15vw;
+      padding: 0 15vw 0 15vw;
     }
   }
 
