@@ -1,4 +1,4 @@
-function updateVisibility(element, visibility) {
+function updateProjectVisibility(element, visibility) {
   const seeProject = element.getElementsByClassName('project-links');
   seeProject[0].style.visibility = visibility;
   const programs = element.getElementsByClassName('programs');
@@ -6,11 +6,11 @@ function updateVisibility(element, visibility) {
 }
 
 function makeVisible(event) {
-  updateVisibility(event, 'visible');
+  updateProjectVisibility(event, 'visible');
 }
 
 function makeHidden(event) {
-  updateVisibility(event, 'hidden');
+  updateProjectVisibility(event, 'hidden');
 }
 
 const projects = document.getElementsByClassName('project');
