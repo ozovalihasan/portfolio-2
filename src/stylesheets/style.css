@@ -1,0 +1,216 @@
+.bg-first {
+  background-color: #46c2fb; }
+
+.text-first {
+  color: #46c2fb; }
+
+.bg-second {
+  background-color: #faac47; }
+
+.text-second {
+  color: #faac47; }
+
+.bg-third {
+  background-color: #2a2b2e; }
+
+.text-third {
+  color: #2a2b2e; }
+
+.bg-fourth {
+  background-color: #737986; }
+
+.text-fourth {
+  color: #737986; }
+
+.bg-fifth {
+  background-color: #fff; }
+
+.text-fifth {
+  color: #fff; }
+
+.bg-sixth {
+  background-color: #f5fcfd; }
+
+.text-sixth {
+  color: #f5fcfd; }
+
+.bg-seventh {
+  background-color: #91dbfd; }
+
+.text-seventh {
+  color: #91dbfd; }
+
+.bg-eight {
+  background-color: #fcce91; }
+
+.text-eight {
+  color: #fcce91; }
+
+a:hover {
+  text-decoration: none;
+  color: unset; }
+
+.bg-hover-seventh:hover {
+  background-color: #91dbfd; }
+
+.bold-big-font {
+  font-size: 28px;
+  font-weight: 700; }
+
+.border-radius {
+  border-radius: 10px; }
+
+html {
+  overflow-y: scroll;
+  scrollbar-color: #faac47 #46c2fb;
+  scroll-padding-top: 110px; }
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #46c2fb; }
+
+::-webkit-scrollbar-thumb {
+  background: #faac47; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5; }
+
+nav {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  z-index: 10; }
+  nav .profile-picture {
+    background-image: url("assets/hasanozovali.jpg");
+    background-size: cover;
+    width: 50px;
+    height: 50px; }
+
+article {
+  margin-bottom: 50px; }
+  article h2 {
+    top: 10px;
+    left: 30px; }
+  article .project-image {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(180deg, rgba(245, 252, 253, 0.85) 0%, rgba(245, 252, 253, 0.55) 30px, rgba(255, 255, 255, 0.25) 60px, rgba(255, 255, 255, 0) 98.35%); }
+  article .programs > div {
+    margin-left: 10px;
+    margin-right: 10px; }
+
+header {
+  margin-top: 96px;
+  background-image: linear-gradient(to left, rgba(70, 194, 251, 0.95) 0%, rgba(250, 172, 71, 0.95) 100%), url("assets/intro.jpg");
+  background-size: cover; }
+  header .intro-title {
+    font-size: 50px; }
+  header .intro-subtitle {
+    font-size: 35px; }
+
+form input,
+form textarea {
+  border: 1px solid #737986;
+  outline: none; }
+
+.copy-right {
+  border-top: 1px;
+  border-style: solid;
+  border-color: #faac47; }
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #46c2fb;
+  border-bottom: 16px solid #faac47;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@media screen and (min-width: 768px) {
+  .intro-links {
+    z-index: 1; }
+
+  html {
+    scroll-padding-top: 0; }
+
+  nav {
+    position: static;
+    width: 20%;
+    height: 0; }
+    nav .content-nav {
+      position: fixed;
+      width: 20%; }
+
+  .intro-background,
+  .footer-background {
+    display: block;
+    fill: #fff; }
+
+  .intro-background {
+    height: max(20vh, 550px);
+    width: 100%; }
+
+  header.header {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; }
+    header.header > * {
+      width: auto;
+      margin: 0 100px 0 15vw;
+      padding: 0 15vw 0 15vw; }
+
+  article .programs {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    visibility: hidden; }
+    article .programs > div {
+      margin-left: 0.5em;
+      margin-right: 0.5em; }
+  article img {
+    height: 30vw;
+    width: 200px;
+    object-fit: cover; }
+  article .project-links {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin: 0 auto;
+    visibility: hidden; }
+
+  .footer {
+    background-color: transparent; }
+    .footer .footer-background {
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      background-color: #46c2fb; } }
+
+/*# sourceMappingURL=style.css.map */
