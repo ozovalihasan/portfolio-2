@@ -6,7 +6,12 @@ const Projects = () => {
 
   return (
     <div className="projects">
-      {projects[0].liveLink}
+      {projects.map(project => (
+        <div key={project.name}>
+          {project.liveLink}
+          {project.name}
+        </div>
+      ))}
     </div>
   );
 };
