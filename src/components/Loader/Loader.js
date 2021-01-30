@@ -20,8 +20,8 @@ const MainLoading = styled.div`
     top: 50%;
 
     @keyframes spinAnimation {
-        from: 0% { transform: translate(-50%, -50%) rotate(0deg); }
-        to: 100% { transform: translate(-50%, -50%)  rotate(360deg); }
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%)  rotate(360deg); }
     }
 `;
 export default Loader;
