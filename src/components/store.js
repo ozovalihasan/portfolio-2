@@ -3,6 +3,7 @@ import { createContext } from 'react';
 const initialState = {
   projects: [
     {
+      name: 'Dr. Ti',
       projectImage: 'assets/project0.png',
       usedLanguages: [
         'React',
