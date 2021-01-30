@@ -1,11 +1,10 @@
-import Loader from '../Loader/Loader';
+import React from 'react';
+import Projects from '../Projects/Projects';
 
-function App() {
-  return (
-    <div className="App">
-      <Loader />
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Projects />
+  </div>
+);
 
 export default App;

@@ -7,21 +7,23 @@ const Loader = () => (
 );
 
 const MainLoading = styled.div`
-    z-index: 999;
+    position: absolute;
+    z-index: 1;
     border: 16px solid #f3f3f3;
     border-radius: 50%;
     border-top: 16px solid ${color.firstColor};
     border-bottom: 16px solid ${color.secondColor};
     width: 120px;
     height: 120px;
-    animation: spinAnimation 2s linear infinite;
-    position: absolute;
+    animation: spin 2s linear infinite;
     left: 50%;
     top: 50%;
 
-    @keyframes spinAnimation {
+    @keyframes spin {
         0% { transform: translate(-50%, -50%) rotate(0deg); }
         100% { transform: translate(-50%, -50%)  rotate(360deg); }
     }
+
+
 `;
 export default Loader;
