@@ -91,6 +91,33 @@ const initialState = {
       'Teamwork',
     ],
   },
+  socialLinks: [
+    {
+      title: 'Github',
+      link: 'https://github.com/ozovalihasan',
+      icon: 'fa-github',
+    },
+    {
+      title: 'Linkedin',
+      link: 'https://www.linkedin.com/in/hasan-ozovali/',
+      icon: 'fa-linkedin',
+    },
+    {
+      title: 'Angellist',
+      link: 'https://angel.co/u/hasan-ozovali',
+      icon: 'fa-angellist',
+    },
+    {
+      title: 'Twitter',
+      link: 'https://twitter.com/ozovalihasan',
+      icon: 'fa-twitter',
+    },
+    {
+      title: 'Resume',
+      link: 'https://drive.google.com/file/d/153IJHzt8K-sMMl_U3C36bQC4QUxd7gDP/view?usp=sharing',
+      icon: 'fa-file-alt',
+    },
+  ],
 };
 const store = createContext(initialState);
 
