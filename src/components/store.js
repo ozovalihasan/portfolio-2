@@ -93,29 +93,29 @@ const initialState = {
   },
   socialLinks: [
     {
-      title: 'Github',
+      name: 'Github',
       link: 'https://github.com/ozovalihasan',
-      icon: 'fa-github',
+      icon: ['fab', 'github'],
     },
     {
-      title: 'Linkedin',
+      name: 'Linkedin',
       link: 'https://www.linkedin.com/in/hasan-ozovali/',
-      icon: 'fa-linkedin',
+      icon: ['fab', 'linkedin'],
     },
     {
-      title: 'Angellist',
+      name: 'Angellist',
       link: 'https://angel.co/u/hasan-ozovali',
-      icon: 'fa-angellist',
+      icon: ['fab', 'angellist'],
     },
     {
-      title: 'Twitter',
+      name: 'Twitter',
       link: 'https://twitter.com/ozovalihasan',
-      icon: 'fa-twitter',
+      icon: ['fab', 'twitter'],
     },
     {
-      title: 'Resume',
+      name: 'Resume',
       link: 'https://drive.google.com/file/d/153IJHzt8K-sMMl_U3C36bQC4QUxd7gDP/view?usp=sharing',
-      icon: 'fa-file-alt',
+      icon: ['fas', 'file-alt'],
     },
   ],
 };
