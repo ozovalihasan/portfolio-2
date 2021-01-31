@@ -68,6 +68,29 @@ const initialState = {
       sourceLink: 'https://github.com/ozovalihasan/bookstore',
     },
   ],
+  skills: {
+    languages: [
+      'JavaScript',
+      'Ruby',
+      'HTML',
+      'CSS',
+    ],
+    frameworks: [
+      'Bootstrap',
+      'Sass',
+      'Ruby on Rails',
+      'RSpec',
+      'Phaser',
+      'React',
+      'Redux/Redux Toolkit',
+    ],
+    skills: [
+      'GitFlow',
+      'Github',
+      'Remote working',
+      'Teamwork',
+    ],
+  },
 };
 const store = createContext(initialState);
 
