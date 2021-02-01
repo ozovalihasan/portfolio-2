@@ -1,3 +1,4 @@
+import { styled } from '@linaria/react';
 import React, { useContext } from 'react';
 import store from '../store';
 
@@ -7,13 +8,26 @@ const Projects = () => {
   return (
     <div className="projects">
       {projects.map(project => (
-        <div key={project.name}>
+        <Project key={project.name}>
+          <ProjectImage
+            src={`assets/${project.projectImage}`}
+            alt=""
+          />
           {project.liveLink}
           {project.name}
-        </div>
+        </Project>
       ))}
     </div>
   );
 };
 
+const Project = styled.div`
+  color: red;
+`;
+
+const ProjectImage = styled.img`
+  height: 100px;
+  width: 100px;
+
+`;
 export default Projects;
