@@ -4,7 +4,7 @@ const initialState = {
   projects: [
     {
       name: 'Dr. Ti',
-      projectImage: 'assets/project0.png',
+      projectImage: 'project0.png',
       usedLanguages: [
         'React',
         'Redux Toolkit',
@@ -16,7 +16,7 @@ const initialState = {
     },
     {
       name: 'Whistle',
-      projectImage: 'assets/project1.jpg',
+      projectImage: 'project1.jpg',
       usedLanguages: [
         'HTML/CSS',
         'Ruby',
@@ -27,7 +27,7 @@ const initialState = {
     },
     {
       name: 'Slack Tic-tac-toe Bot',
-      projectImage: 'assets/project2.jpg',
+      projectImage: 'project2.jpg',
       usedLanguages: [
         'Ruby',
         'Slack API',
@@ -37,7 +37,7 @@ const initialState = {
     },
     {
       name: 'Airshow',
-      projectImage: 'assets/project3.jpg',
+      projectImage: 'project3.jpg',
       usedLanguages: [
         'HTML',
         'CSS',
@@ -48,7 +48,7 @@ const initialState = {
     },
     {
       name: 'Escape',
-      projectImage: 'assets/project4.jpg',
+      projectImage: 'project4.jpg',
       usedLanguages: [
         'JavaScript',
         'Phaser',
@@ -58,7 +58,7 @@ const initialState = {
     },
     {
       name: 'BookStore CMS',
-      projectImage: 'assets/project5.png',
+      projectImage: 'project5.png',
       usedLanguages: [
         'React',
         'Redux',
