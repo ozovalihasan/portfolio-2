@@ -1,33 +1,204 @@
 import { styled } from '@linaria/react';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { css } from '@linaria/core';
 import store from '../store';
+import * as color from '../styleSheets/styleVariables';
 
 const Projects = () => {
   const { projects } = useContext(store);
+  const [showHover, setShowHover] = useState([]);
+
+  const handleMouseEnter = e => {
+    const updateShowHover = [...showHover];
+    updateShowHover[e] = true;
+    setShowHover(updateShowHover);
+  };
+
+  const handleMouseLeave = e => {
+    const updateShowHover = [...showHover];
+    updateShowHover[e] = false;
+    setShowHover(updateShowHover);
+  };
+
+  const animation = css`
+    animation: spin 0.2s ease-out ;
+    animation-fill-mode: both;
+    z-index: 1;
+
+    @keyframes spin {
+      0% {
+        transform: translate( 0, 0);
+        filter: drop-shadow(0 0 0 ${color.firstColor});
+
+      }
+    
+      100% {
+        transform: translate(-5px , -10px);
+        filter: drop-shadow(5px 10px 10px ${color.firstColor});
+      }
+    }
+    
+  `;
 
   return (
-    <div className="projects">
-      {projects.map(project => (
-        <Project key={project.name}>
-          <ProjectImage
-            src={`assets/${project.projectImage}`}
-            alt=""
-          />
-          {project.liveLink}
-          {project.name}
-        </Project>
-      ))}
-    </div>
+    <ProjectsOuter id="portfolio">
+      <ProjectsTitle>
+        My portfolio
+      </ProjectsTitle>
+      <ProjectsInner>
+        {projects.map((project, index) => (
+          <Project
+            key={project.name}
+            onMouseOver={() => handleMouseEnter(index)}
+            onFocus={() => handleMouseEnter(index)}
+            onMouseOut={() => handleMouseLeave(index)}
+            onBlur={() => handleMouseLeave(index)}
+            className={showHover[index] && animation}
+          >
+            <ProjectImage
+              src={`assets/${project.projectImage}`}
+              showHover={showHover[index]}
+              alt=""
+            />
+            <ProjectGradient />
+
+            <ProjectName>
+              {project.name}
+            </ProjectName>
+
+            <ProjectLanguages showHover={showHover[index]}>
+
+              {project.usedLanguages.map(language => (
+                <ProjectLanguage key={language}>
+                  {language}
+                </ProjectLanguage>
+
+              ))}
+            </ProjectLanguages>
+            <ProjectLinks>
+
+              { project.liveLink && (
+              <ProjectLink target="blank" title="Live Demo Link" href={project.liveLink}>
+                <UpdatedFontAwesomeIcon icon={['fas', 'paper-plane']} />
+              </ProjectLink>
+              )}
+
+              <ProjectLink target="blank" title="Source Code" href={project.sourceLink}>
+                <UpdatedFontAwesomeIcon icon={['fab', 'github']} />
+              </ProjectLink>
+
+            </ProjectLinks>
+
+          </Project>
+        ))}
+      </ProjectsInner>
+    </ProjectsOuter>
   );
 };
 
+const ProjectsOuter = styled.div`
+  padding: 2rem;
+
+  @media screen and (min-width: 768px) {
+    padding: 3rem;
+  }
+`;
+
+const ProjectsTitle = styled.div`
+  font-size: 28px;
+  font-weight: 700;
+`;
+
+const ProjectsInner = styled.div`
+  background-color: white;
+  
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-gap: 20px 20px;
+    grid-template-columns: repeat(2,1fr);
+  }
+`;
+
 const Project = styled.div`
-  color: red;
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  margin: 30px 0;
 `;
 
 const ProjectImage = styled.img`
-  height: 100px;
-  width: 100px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+  border-radius: 10px;
+`;
+
+const ProjectGradient = styled.div`
+  background-image: linear-gradient(
+    180deg, 
+    rgba(245, 252, 253, 0.85) 0%, 
+    rgba(245, 252, 253, 0.55) 30px, 
+    rgba(255, 255, 255, 0.25) 60px, 
+    rgba(255, 255, 255, 0) 98.35%
+  );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+`;
+
+const ProjectName = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: ${color.thirdColor};
+  font-size: 28px;
+  font-weight: bold;
+`;
+
+const ProjectLanguages = styled.div`
+  color: purple;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  display: ${props => (props.showHover ? 'flex' : 'none')}
 
 `;
+const ProjectLanguage = styled.div`
+  color: ${color.fifthColor};
+  margin:10px;
+  border-radius: 20px;
+  background-color: ${color.thirdColor};
+  padding: 3px 20px;
+
+`;
+
+const ProjectLinks = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+`;
+
+const ProjectLink = styled.a`
+  font-size: 40px;
+  color: ${color.sixthColor};
+  background-color: ${color.firstColor};
+  border-radius: 50%;
+  padding: 15px;
+  
+  &:hover {
+    color: ${color.thirdColor};
+    background-color: ${color.seventhColor};
+  }
+`;
+
+const UpdatedFontAwesomeIcon = styled(FontAwesomeIcon)`
+  // color: unset;
+`;
+
 export default Projects;
