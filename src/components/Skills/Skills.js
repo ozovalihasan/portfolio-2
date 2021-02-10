@@ -7,47 +7,29 @@ const Skills = () => {
   const { skills } = useContext(store);
   return (
     <SkillsOuter>
-      <SkillsCategory>
-        <SkillsCategoryTitle>
-          Languages
-        </SkillsCategoryTitle>
-        {skills.languages.map(skill => (
-          <SkillsCategoryItem key={skill}>
-            {skill}
-          </SkillsCategoryItem>
-        ))}
-      </SkillsCategory>
-      <SkillsCategory>
-        <SkillsCategoryTitle>
-          Frameworks
-        </SkillsCategoryTitle>
-        {skills.frameworks.map(skill => (
-          <SkillsCategoryItem key={skill}>
-            {skill}
-          </SkillsCategoryItem>
-        ))}
-      </SkillsCategory>
-      <SkillsCategory>
-        <SkillsCategoryTitle>
-          Skills
-        </SkillsCategoryTitle>
-        {skills.skills.map(skill => (
-          <SkillsCategoryItem key={skill}>
-            {skill}
-          </SkillsCategoryItem>
-        ))}
-      </SkillsCategory>
+      {skills.map(skill => (
+        <SkillsCategory key={skill.name}>
+          <SkillsCategoryTitle>
+            {skill.name}
+          </SkillsCategoryTitle>
+          {skill.items.map(skill => (
+            <SkillsCategoryItem key={skill}>
+              {skill}
+            </SkillsCategoryItem>
+          ))}
+        </SkillsCategory>
+      ))}
     </SkillsOuter>
   );
 };
 
 const SkillsOuter = styled.div`
-  display: flex;
   width: 100%;
   padding: 2rem;
 
   @media screen and (min-width: 768px) {
     padding: 3rem;
+    display: flex;
   }
 `;
 
@@ -56,6 +38,7 @@ const SkillsCategory = styled.div`
   background-color: ${color.sixthColor}
   padding: 40px 20px;
   line-height: 1.5;
+  margin: 10px 0;
 `;
 
 const SkillsCategoryTitle = styled.h2`
