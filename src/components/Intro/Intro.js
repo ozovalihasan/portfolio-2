@@ -6,8 +6,19 @@ import * as color from '../styleSheets/styleVariables';
 const Intro = () => (
   <IntroOuter id="intro">
     <IntroImg src={`${process.env.PUBLIC_URL}/assets/intro.jpg`} alt="" />
-
+    <GradientBackground />
+    <SVG
+      viewBox="0 0 210 150"
+      preserveAspectRatio="none"
+    >
+      <g>
+        <path
+          d="M 1.1708345,-2.4960381 -30.663143,-7.5680199 -19.969839,198.17399 225.85024,150.3891 C -0.09803712,139.83046 10.535889,167.70683 1.1708345,-2.4960381 Z"
+        />
+      </g>
+    </SVG>
     <IntroInner>
+
       <IntroDescription>
         <IntroTitle>
           Hasan Özovalı
@@ -24,17 +35,9 @@ const Intro = () => (
           <SocialLinks hoverColor={color.thirdColor} />
         </OuterSocialLinks>
       </IntroDescription>
+
     </IntroInner>
-    <SVG
-      viewBox="0 0 210 150"
-      preserveAspectRatio="none"
-    >
-      <g>
-        <path
-          d="M 1.1708345,-2.4960381 -30.663143,-7.5680199 -19.969839,198.17399 225.85024,150.3891 C -0.09803712,139.83046 10.535889,167.70683 1.1708345,-2.4960381 Z"
-        />
-      </g>
-    </SVG>
+
   </IntroOuter>
 );
 
@@ -51,6 +54,17 @@ const IntroImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
+
+`;
+
+const GradientBackground = styled.div`
+  position: absolute;
+  background-image: linear-gradient(to left, rgba(70, 194, 251, 0.95) 0%, rgba(250, 172, 71, 0.95) 100%);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 
 `;
 
@@ -62,7 +76,6 @@ const SVG = styled.svg`
   top: 0;
   left: 0;
   display: none;
-  
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -70,7 +83,6 @@ const SVG = styled.svg`
 `;
 
 const IntroInner = styled.div`
-  background-image: linear-gradient(to left, rgba(70, 194, 251, 0.95) 0%, rgba(250, 172, 71, 0.95) 100%);
   padding: 2rem;
   width: 100%;
   height: 100%;
@@ -81,6 +93,8 @@ const IntroInner = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
+  
 
   @media screen and (min-width: 768px) {
     padding: 0 100px 0 15vw;
