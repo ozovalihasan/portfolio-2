@@ -1,7 +1,6 @@
 import { styled } from '@linaria/react';
 import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { css } from '@linaria/core';
 import store from '../store';
 import * as color from '../styleSheets/styleVariables';
 
@@ -21,26 +20,6 @@ const Projects = () => {
     setShowHover(updateShowHover);
   };
 
-  const animation = css`
-    animation: spin 0.2s ease-out ;
-    animation-fill-mode: both;
-    z-index: 1;
-
-    @keyframes spin {
-      0% {
-        transform: translate( 0, 0);
-        filter: drop-shadow(0 0 0 ${color.firstColor});
-
-      }
-    
-      100% {
-        transform: translate(-5px , -10px);
-        filter: drop-shadow(5px 10px 10px ${color.firstColor});
-      }
-    }
-    
-  `;
-
   return (
     <ProjectsOuter id="portfolio">
       <ProjectsTitle>
@@ -54,7 +33,7 @@ const Projects = () => {
             onFocus={() => handleMouseEnter(index)}
             onMouseOut={() => handleMouseLeave(index)}
             onBlur={() => handleMouseLeave(index)}
-            className={showHover[index] && animation}
+            className={showHover[index]}
           >
             <ProjectImage
               src={`assets/${project.projectImage}`}
@@ -125,6 +104,15 @@ const Project = styled.div`
   width: 100%;
   border-radius: 10px;
   margin: 30px 0;
+
+  transition: all 0.3s ease-out;
+  transform: translate( 0, 0);
+  filter: drop-shadow(0 0 0 ${color.firstColor});
+  
+  &:hover {
+    transform: translate(-5px , -10px);
+    filter: drop-shadow(5px 10px 10px ${color.firstColor});
+  }
 `;
 
 const ProjectImage = styled.img`
