@@ -1,6 +1,8 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithub, faLinkedin, faAngellist, faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import { faFileAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { styled } from '@linaria/react';
 import React from 'react';
 import ContactFormFooter from '../ContactFormFooter/ContactFormFooter';
@@ -11,7 +13,7 @@ import reset from '../styleSheets/reset';
 import index from '../styleSheets/index';
 import Skills from '../Skills/Skills';
 
-library.add(fab, fas);
+library.add(faGithub, faLinkedin, faAngellist, faTwitter, faFileAlt, faPaperPlane);
 
 const App = () => (
   <div className={reset}>
