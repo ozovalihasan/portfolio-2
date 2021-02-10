@@ -68,29 +68,39 @@ const initialState = {
       sourceLink: 'https://github.com/ozovalihasan/bookstore',
     },
   ],
-  skills: {
-    languages: [
-      'JavaScript',
-      'Ruby',
-      'HTML',
-      'CSS',
-    ],
-    frameworks: [
-      'Bootstrap',
-      'Sass',
-      'Ruby on Rails',
-      'RSpec',
-      'Phaser',
-      'React',
-      'Redux/Redux Toolkit',
-    ],
-    skills: [
-      'GitFlow',
-      'Github',
-      'Remote working',
-      'Teamwork',
-    ],
-  },
+  skills: [
+    {
+      name: 'Languages',
+      items: [
+        'JavaScript',
+        'Ruby',
+        'HTML',
+        'CSS',
+      ],
+    },
+
+    {
+      name: 'Frameworks',
+      items: [
+        'Bootstrap',
+        'Sass',
+        'Ruby on Rails',
+        'RSpec',
+        'Phaser',
+        'React',
+        'Redux/Redux Toolkit',
+      ],
+    },
+    {
+      name: 'Skills',
+      items: [
+        'GitFlow',
+        'Github',
+        'Remote working',
+        'Teamwork',
+      ],
+    },
+  ],
   socialLinks: [
     {
       name: 'Github',
