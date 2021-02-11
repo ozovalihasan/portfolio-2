@@ -21,6 +21,7 @@ const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [formStatus, setFormStatus] = useState('');
 
   const encode = data => Object.keys(data)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
@@ -32,13 +33,14 @@ const ContactForm = () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...{ name, email, message } }),
     })
-      // eslint-disable-next-line no-alert
-      .then(() => alert('Success!'))
-      // eslint-disable-next-line no-alert
-      .catch(error => alert(error));
-    setName('');
-    setEmail('');
-    setMessage('');
+      .then(() => {
+        setFormStatus('Thank you for getting in touch!'); setName('');
+        setName('');
+        setEmail('');
+        setMessage('');
+      })
+      .catch(() => setFormStatus('Oops! There was an error trying to send your form. Please try again later.'));
+    e.target.style.opacity = 0;
     e.preventDefault();
   };
   return (
@@ -53,40 +55,46 @@ const ContactForm = () => {
           I&apos;d love to hear from you.
         </div>
       </ContactFormText>
-      <Form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-        <FormHeader>
-          <input type="hidden" name="form-name" value="contact" />
-          <LeftInput
-            type="text"
-            placeholder="Full Name*"
+      <ContactFormInner>
+        <Form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+          <FormHeader>
+            <input type="hidden" name="form-name" value="contact" />
+            <LeftInput
+              type="text"
+              placeholder="Full Name*"
+              className={contactInput}
+              name="name"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              required
+            />
+            <RightInput
+              type="email"
+              placeholder="Email*"
+              className={contactInput}
+              name="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+            />
+          </FormHeader>
+          <FormBody
+            placeholder="Message*"
+            name="message"
+            value={message}
+            onChange={e => setMessage(e.target.value)}
             className={contactInput}
-            name="name"
-            onChange={e => setName(e.target.value)}
             required
           />
-          <RightInput
-            type="email"
-            placeholder="Email*"
-            className={contactInput}
-            name="email"
-            onChange={e => setEmail(e.target.value)}
-            required
-          />
-        </FormHeader>
-        <FormBody
-          placeholder="Message*"
-          name="message"
-          onChange={e => setMessage(e.target.value)}
-          className={contactInput}
-          required
-        />
-        <ContactButton
-          type="submit"
-          name="submit"
-        >
-          Get in touch
-        </ContactButton>
-      </Form>
+          <ContactButton
+            type="submit"
+            name="submit"
+          >
+            Get in touch
+          </ContactButton>
+        </Form>
+        {formStatus && <FormStatus>{formStatus}</FormStatus>}
+      </ContactFormInner>
     </ContactFormOuter>
   );
 };
@@ -112,9 +120,14 @@ const ContactFormTitle = styled.div`
   font-weight: 700;
 `;
 
+const ContactFormInner = styled.div`
+  position: relative;
+`;
+
 const Form = styled.form`
   background-color: ${color.firstColor};
   padding: 2rem;
+  opacity: 1;
 
   @media screen and (min-width: 768px) {
     padding: 3rem;
@@ -152,6 +165,25 @@ const ContactButton = styled.button`
   padding: 1rem;
   width: 100%;
   border: none;
+`;
+
+const FormStatus = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: ${color.secondColor};
+  color: ${color.thirdColor};
+
+  @media screen and (min-width: 768px) {
+    border-radius: 10px;
+  }
 `;
 
 export default ContactForm;
