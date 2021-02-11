@@ -1,6 +1,6 @@
 import { styled } from '@linaria/react';
 import { css } from '@linaria/core';
-import React from 'react';
+import React, { useState } from 'react';
 import * as color from '../styleSheets/styleVariables';
 
 const contactInput = css`
@@ -17,51 +17,77 @@ const contactInput = css`
   }
 `;
 
-const ContactForm = () => (
-  <ContactFormOuter id="contact">
-    <ContactFormText>
-      <ContactFormTitle>
-        Interested in collaborating
-      </ContactFormTitle>
-      <div>
-        As you can see from the above projects, I love coding and producing high-quality work.
-        If you like what you see and have a project that you need to be coded,
-        I&apos;d love to hear from you.
-      </div>
-    </ContactFormText>
-    <Form name="contact" method="POST" data-netlify="true">
-      <FormHeader>
-        <input type="hidden" name="form-name" value="contact" />
-        <LeftInput
-          type="text"
-          placeholder="Full Name*"
+const ContactForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const encode = data => Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+
+  const handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...{ name, email, message } }),
+    })
+      // eslint-disable-next-line no-alert
+      .then(() => alert('Success!'))
+      // eslint-disable-next-line no-alert
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+  return (
+    <ContactFormOuter id="contact">
+      <ContactFormText>
+        <ContactFormTitle>
+          Interested in collaborating
+        </ContactFormTitle>
+        <div>
+          As you can see from the above projects, I love coding and producing high-quality work.
+          If you like what you see and have a project that you need to be coded,
+          I&apos;d love to hear from you.
+        </div>
+      </ContactFormText>
+      <Form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+        <FormHeader>
+          <input type="hidden" name="form-name" value="contact" />
+          <LeftInput
+            type="text"
+            placeholder="Full Name*"
+            className={contactInput}
+            name="name"
+            onChange={e => setName(e.target.value)}
+            required
+          />
+          <RightInput
+            type="email"
+            placeholder="Email*"
+            className={contactInput}
+            name="email"
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+        </FormHeader>
+        <FormBody
+          placeholder="Message*"
+          name="message"
+          onChange={e => setMessage(e.target.value)}
           className={contactInput}
-          name="name"
           required
         />
-        <RightInput
-          type="email"
-          placeholder="Email*"
-          className={contactInput}
-          name="email"
-          required
-        />
-      </FormHeader>
-      <FormBody
-        placeholder="Message*"
-        name="message"
-        className={contactInput}
-        required
-      />
-      <ContactButton
-        type="submit"
-        name="submit"
-      >
-        Get in touch
-      </ContactButton>
-    </Form>
-  </ContactFormOuter>
-);
+        <ContactButton
+          type="submit"
+          name="submit"
+        >
+          Get in touch
+        </ContactButton>
+      </Form>
+    </ContactFormOuter>
+  );
+};
 
 const ContactFormOuter = styled.div`
   @media screen and (min-width: 768px) {
