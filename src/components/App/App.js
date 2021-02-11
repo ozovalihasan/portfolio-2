@@ -19,7 +19,7 @@ library.add(faGithub, faLinkedin, faAngellist, faTwitter, faFileAlt, faPaperPlan
 const App = () => {
   const [loading, setLoading] = useState(true);
   return (
-    <div className={reset} onLoad={() => { console.warn('hi'); setLoading(false); }}>
+    <div className={reset} onLoad={() => { setLoading(false); }}>
       {loading && <Loader />}
       <AppOuter className={index}>
         <NavBar />
