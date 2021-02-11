@@ -32,7 +32,9 @@ const ContactForm = () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...{ name, email, message } }),
     })
+      // eslint-disable-next-line no-alert
       .then(() => alert('Success!'))
+      // eslint-disable-next-line no-alert
       .catch(error => alert(error));
 
     e.preventDefault();
