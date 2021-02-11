@@ -1,5 +1,5 @@
 import { styled } from '@linaria/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { css } from '@linaria/core';
 import * as color from '../styleSheets/styleVariables';
 
@@ -18,30 +18,20 @@ const contactInput = css`
 `;
 
 const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [success, setSuccess] = useState(false);
 
-  const encode = data => Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&');
-
-  const handleSubmit = e => {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...{ name, email, message } }),
-    })
-      // eslint-disable-next-line no-alert
-      .then(() => alert('Success!'))
-      // eslint-disable-next-line no-alert
-      .catch(error => alert(error));
-
-    e.preventDefault();
-  };
+  useEffect(() => {
+    if (window.location.search.includes('success=true')) {
+      setSuccess(true);
+    }
+  }, []);
 
   return (
     <ContactFormOuter id="contact">
+      {success && (
+        <p style={{ color: 'green' }}>Thanks for your message! </p>
+      )}
+
       <ContactFormText>
         <ContactFormTitle>
           Interested in collaborating
@@ -52,29 +42,27 @@ const ContactForm = () => {
           I&apos;d love to hear from you.
         </div>
       </ContactFormText>
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <FormHeader>
+          <input type="hidden" name="form-name" value="contact" />
           <LeftInput
             type="text"
             placeholder="Full Name*"
             className={contactInput}
             name="name"
-            onChange={setName}
             required
           />
           <RightInput
-            type="text"
+            type="email"
             placeholder="Email*"
             className={contactInput}
             name="email"
-            onChange={setEmail}
             required
           />
         </FormHeader>
         <FormBody
           placeholder="Message*"
           name="message"
-          onChange={setMessage}
           className={contactInput}
           required
         />
