@@ -28,7 +28,7 @@ const ContactForm = () => (
         I&apos;d love to hear from you.
       </div>
     </ContactFormText>
-    <Form name="contact" method="post">
+    <Form name="contact" method="POST" data-netlify="true">
       <FormHeader>
         <input type="hidden" name="form-name" value="contact" />
         <LeftInput
