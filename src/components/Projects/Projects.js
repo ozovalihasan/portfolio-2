@@ -57,7 +57,7 @@ const Projects = () => {
             </ProjectLanguages>
             <ProjectLinks>
 
-              { project.liveLink && (
+              {project.liveLink && (
               <ProjectLink target="blank" title="Live Demo Link" href={project.liveLink}>
                 <UpdatedFontAwesomeIcon icon={['fas', 'paper-plane']} />
               </ProjectLink>
@@ -148,14 +148,15 @@ const ProjectName = styled.div`
 `;
 
 const ProjectLanguages = styled.div`
-  color: purple;
+  display: flex;
+  flex-wrap: wrap;
+  
+  @media screen and (min-width: 768px) {
   position: absolute;
   top: 30px;
   left: 10px;
-  display: flex;
-  flex-wrap: wrap;
   display: ${props => (props.showHover ? 'flex' : 'none')}
-
+  }
 `;
 const ProjectLanguage = styled.div`
   color: ${color.fifthColor};
@@ -167,9 +168,12 @@ const ProjectLanguage = styled.div`
 `;
 
 const ProjectLinks = styled.div`
+
+@media screen and (min-width: 768px) {
   position: absolute;
   right: 0;
   bottom: 0;
+  }
 `;
 
 const ProjectLink = styled.a`
