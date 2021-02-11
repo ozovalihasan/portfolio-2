@@ -17,65 +17,51 @@ const contactInput = css`
   }
 `;
 
-const ContactForm = () => {
-  const [success, setSuccess] = useState(false);
-
-  useEffect(() => {
-    if (window.location.search.includes('success=true')) {
-      setSuccess(true);
-    }
-  }, []);
-
-  return (
-    <ContactFormOuter id="contact">
-      {success && (
-        <p style={{ color: 'green' }}>Thanks for your message! </p>
-      )}
-
-      <ContactFormText>
-        <ContactFormTitle>
-          Interested in collaborating
-        </ContactFormTitle>
-        <div>
-          As you can see from the above projects, I love coding and producing high-quality work.
-          If you like what you see and have a project that you need to be coded,
-          I&apos;d love to hear from you.
-        </div>
-      </ContactFormText>
-      <Form name="contact" method="post">
-        <FormHeader>
-          <input type="hidden" name="form-name" value="contact" />
-          <LeftInput
-            type="text"
-            placeholder="Full Name*"
-            className={contactInput}
-            name="name"
-            required
-          />
-          <RightInput
-            type="email"
-            placeholder="Email*"
-            className={contactInput}
-            name="email"
-            required
-          />
-        </FormHeader>
-        <FormBody
-          placeholder="Message*"
-          name="message"
+const ContactForm = () => (
+  <ContactFormOuter id="contact">
+    <ContactFormText>
+      <ContactFormTitle>
+        Interested in collaborating
+      </ContactFormTitle>
+      <div>
+        As you can see from the above projects, I love coding and producing high-quality work.
+        If you like what you see and have a project that you need to be coded,
+        I&apos;d love to hear from you.
+      </div>
+    </ContactFormText>
+    <Form name="contact" method="post">
+      <FormHeader>
+        <input type="hidden" name="form-name" value="contact" />
+        <LeftInput
+          type="text"
+          placeholder="Full Name*"
           className={contactInput}
+          name="name"
           required
         />
-        <ContactButton
-          type="submit"
-          name="submit"
-        >
-          Get in touch
-        </ContactButton>
-      </Form>
-    </ContactFormOuter>
-  );
-};
+        <RightInput
+          type="email"
+          placeholder="Email*"
+          className={contactInput}
+          name="email"
+          required
+        />
+      </FormHeader>
+      <FormBody
+        placeholder="Message*"
+        name="message"
+        className={contactInput}
+        required
+      />
+      <ContactButton
+        type="submit"
+        name="submit"
+      >
+        Get in touch
+      </ContactButton>
+    </Form>
+  </ContactFormOuter>
+);
 
 const ContactFormOuter = styled.div`
   @media screen and (min-width: 768px) {
