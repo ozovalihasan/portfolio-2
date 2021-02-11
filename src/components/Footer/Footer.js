@@ -22,6 +22,7 @@ const Footer = () => (
 const FooterOuter = styled.div`
   text-align: center;
   background-color: ${color.firstColor};
+  padding-top: 30px;
 
   @media screen and (min-width: 768px) {
     background-color: transparent;
