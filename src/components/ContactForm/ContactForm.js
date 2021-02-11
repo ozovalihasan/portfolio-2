@@ -42,7 +42,7 @@ const ContactForm = () => {
           I&apos;d love to hear from you.
         </div>
       </ContactFormText>
-      <Form>
+      <Form name="contact" method="post">
         <FormHeader>
           <input type="hidden" name="form-name" value="contact" />
           <LeftInput
