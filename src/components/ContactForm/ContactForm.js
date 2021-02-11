@@ -1,5 +1,6 @@
 import { styled } from '@linaria/react';
 import { css } from '@linaria/core';
+import React from 'react';
 import * as color from '../styleSheets/styleVariables';
 
 const contactInput = css`
