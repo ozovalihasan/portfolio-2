@@ -83,7 +83,7 @@ nav {
   position: fixed;
   z-index: 10; }
   nav .profile-picture {
-    background-image: url("assets/hasanozovali.jpg");
+    background-image: url("assets/hasanozovali.webp");
     background-size: cover;
     width: 50px;
     height: 50px; }
