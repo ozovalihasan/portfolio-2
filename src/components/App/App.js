@@ -4,7 +4,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faFileAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { styled } from '@linaria/react';
-import React from 'react';
+import React, { useState } from 'react';
 import ContactFormFooter from '../ContactFormFooter/ContactFormFooter';
 import Intro from '../Intro/Intro';
 import NavBar from '../NavBar/NavBar';
@@ -12,22 +12,27 @@ import Projects from '../Projects/Projects';
 import reset from '../styleSheets/reset';
 import index from '../styleSheets/index';
 import Skills from '../Skills/Skills';
+import Loader from '../Loader/Loader';
 
 library.add(faGithub, faLinkedin, faAngellist, faTwitter, faFileAlt, faPaperPlane);
 
-const App = () => (
-  <div className={reset}>
-    <AppOuter className={index}>
-      <NavBar />
-      <Main>
-        <Intro />
-        <Projects />
-        <Skills />
-        <ContactFormFooter />
-      </Main>
-    </AppOuter>
-  </div>
-);
+const App = () => {
+  const [loading, setLoading] = useState(true);
+  return (
+    <div className={reset} onLoad={() => { console.warn('hi'); setLoading(false); }}>
+      {loading && <Loader />}
+      <AppOuter className={index}>
+        <NavBar />
+        <Main>
+          <Intro />
+          <Projects />
+          <Skills />
+          <ContactFormFooter />
+        </Main>
+      </AppOuter>
+    </div>
+  );
+};
 
 const AppOuter = styled.div`
   display:flex;
