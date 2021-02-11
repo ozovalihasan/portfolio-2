@@ -36,7 +36,9 @@ const ContactForm = () => {
       .then(() => alert('Success!'))
       // eslint-disable-next-line no-alert
       .catch(error => alert(error));
-
+    setName('');
+    setEmail('');
+    setMessage('');
     e.preventDefault();
   };
   return (
