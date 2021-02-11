@@ -22,6 +22,8 @@ const SocialLinksOuter = styled.div`
 `;
 
 const Link = styled.a`
+  transition: color 0.5s;
+  
   &:hover {
     color: ${props => props.hoverColor}
   }

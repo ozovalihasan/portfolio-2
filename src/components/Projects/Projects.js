@@ -58,9 +58,9 @@ const Projects = () => {
             <ProjectLinks>
 
               {project.liveLink && (
-              <ProjectLink target="blank" title="Live Demo Link" href={project.liveLink}>
-                <UpdatedFontAwesomeIcon icon={['fas', 'paper-plane']} />
-              </ProjectLink>
+                <ProjectLink target="blank" title="Live Demo Link" href={project.liveLink}>
+                  <UpdatedFontAwesomeIcon icon={['fas', 'paper-plane']} />
+                </ProjectLink>
               )}
 
               <ProjectLink target="blank" title="Source Code" href={project.sourceLink}>
@@ -152,10 +152,10 @@ const ProjectLanguages = styled.div`
   flex-wrap: wrap;
   
   @media screen and (min-width: 768px) {
-  position: absolute;
-  top: 30px;
-  left: 10px;
-  display: ${props => (props.showHover ? 'flex' : 'none')}
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    display: ${props => (props.showHover ? 'flex' : 'none')}
   }
 `;
 const ProjectLanguage = styled.div`
@@ -170,9 +170,9 @@ const ProjectLanguage = styled.div`
 const ProjectLinks = styled.div`
 
 @media screen and (min-width: 768px) {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 `;
 
@@ -182,7 +182,8 @@ const ProjectLink = styled.a`
   background-color: ${color.firstColor};
   border-radius: 50%;
   padding: 15px;
-  
+  transition: all .5s;
+
   &:hover {
     color: ${color.thirdColor};
     background-color: ${color.seventhColor};
