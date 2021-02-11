@@ -1,5 +1,4 @@
 import { styled } from '@linaria/react';
-import React, { useEffect, useState } from 'react';
 import { css } from '@linaria/core';
 import * as color from '../styleSheets/styleVariables';
 
