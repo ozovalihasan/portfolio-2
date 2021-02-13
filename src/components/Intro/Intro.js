@@ -6,19 +6,18 @@ import * as color from '../styleSheets/styleVariables';
 const Intro = () => (
   <IntroOuter id="intro">
     <IntroImg src={`${process.env.PUBLIC_URL}/assets/intro.jpg`} alt="" />
-    <GradientBackground />
-    <SVG
-      viewBox="0 0 210 150"
-      preserveAspectRatio="none"
-    >
-      <g>
-        <path
-          d="M 1.1708345,-2.4960381 -30.663143,-7.5680199 -19.969839,198.17399 225.85024,150.3891 C -0.09803712,139.83046 10.535889,167.70683 1.1708345,-2.4960381 Z"
-        />
-      </g>
-    </SVG>
-    <IntroInner>
 
+    <IntroInner>
+      <SVG
+        viewBox="0 0 210 150"
+        preserveAspectRatio="none"
+      >
+        <g>
+          <path
+            d="M 1.1708345,-2.4960381 -30.663143,-7.5680199 -19.969839,198.17399 225.85024,150.3891 C -0.09803712,139.83046 10.535889,167.70683 1.1708345,-2.4960381 Z"
+          />
+        </g>
+      </SVG>
       <IntroDescription>
         <IntroTitle>
           Hasan Özovalı
@@ -44,38 +43,30 @@ const Intro = () => (
 const IntroOuter = styled.div`
   width: 100%;
   position: relative;
-
   @media screen and (min-width: 768px) {
     height: 550px;
   }
 `;
 
 const IntroImg = styled.img`
-  width: 100%;
+  width: 100%;  
   height: 100%;
   object-fit: cover;
   z-index: -1;
-
-`;
-
-const GradientBackground = styled.div`
   position: absolute;
-  background-image: linear-gradient(to left, rgba(70, 194, 251, 0.95) 0%, rgba(250, 172, 71, 0.95) 100%);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  
+
 
 `;
 
 const SVG = styled.svg`
-  position: absolute;
   width: 100%;
   height: 550px;
   fill: white;
   top: 0;
   left: 0;
   display: none;
+  position: absolute;
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -90,19 +81,18 @@ const IntroInner = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
-  
+  background-image: linear-gradient(to left, rgba(70, 194, 251, 0.95) 0%, rgba(250, 172, 71, 0.95) 100%);
 
   @media screen and (min-width: 768px) {
     padding: 0 100px 0 15vw;
+    min-height: 550px;
   }
 `;
 
 const IntroDescription = styled.div`
-  color: white;
+  color: ${color.fifthColor};
   padding: 0;
 
   @media screen and (min-width: 768px) {
@@ -131,7 +121,9 @@ const OuterSocialLinks = styled.div`
   margin: 0 -5%;
   display: flex;
   justify-content: center;
-  
+  position: relative;
+  z-index: 2;
+
   @media screen and (min-width: 768px) {
     width: 110%;
     margin: 40px -5%;
