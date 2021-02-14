@@ -35,16 +35,16 @@ const App = () => {
 };
 
 const AppOuter = styled.div`
-  display:flex;
+  display: flex;
 `;
 
 const Main = styled.div`
   width: 100%;
-  padding-top: 155px;
+  padding-top: 115px;
 
   @media screen and (min-width: 768px) {
     padding-top: 0;
-  }  
+  }
 `;
 
 export default App;

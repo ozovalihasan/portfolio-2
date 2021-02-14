@@ -1,3 +1,4 @@
+import { css } from '@linaria/core';
 import { styled } from '@linaria/react';
 import React from 'react';
 import * as color from '../styleSheets/styleVariables';
@@ -18,13 +19,21 @@ const NavBar = () => {
     },
   ];
 
+  const hideForMobile = css`
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  `;
+
   return (
     <NavBarOuter>
       <NavBarInner>
 
         <DeveloperImage src="assets/hasanozovali.jpg" />
         {navBar.map(oneTab => (
-          <NavBarItem href={oneTab.link} title={oneTab.name} key={oneTab.name}>
+          <NavBarItem href={oneTab.link} title={oneTab.name} key={oneTab.name} className={oneTab.name === 'Intro' ? hideForMobile : ''}>
             {oneTab.name}
           </NavBarItem>
         ))}
@@ -67,7 +76,11 @@ const DeveloperImage = styled.img`
   background-size: cover;
   width: 75px;
   border-radius: 50rem;
-  margin: 20px;
+  margin: 0 20px;
+
+  @media screen and (min-width: 768px) {
+    margin: 20px;
+  }
 `;
 
 const NavBarItem = styled.a`
@@ -75,11 +88,11 @@ const NavBarItem = styled.a`
   text-align: center;
   margin: 10px;
   padding: 10px;
-  color: ${color.thirdColor}
+  color: ${color.thirdColor};
   border-radius: 50rem;
 
   &:hover {
-    background-color: ${color.sixthColor}
+    background-color: ${color.sixthColor};
   }
 `;
 

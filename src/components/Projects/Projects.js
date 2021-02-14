@@ -38,11 +38,11 @@ const Projects = () => {
             <ProjectImageContainer
               showHover={showHover[index]}
             >
-            <ProjectImage
-              src={`assets/${project.projectImage}`}
+              <ProjectImage
+                src={`assets/${project.projectImage}`}
                 alt={`Screenshot of ${project.name}`}
-            />
-            <ProjectGradient />
+              />
+              <ProjectGradient />
             </ProjectImageContainer>
 
             <ProjectName>
@@ -62,12 +62,12 @@ const Projects = () => {
 
               {project.liveLink && (
                 <ProjectLink target="blank" title="Live Demo Link" href={project.liveLink}>
-                  <UpdatedFontAwesomeIcon icon={['fas', 'paper-plane']} />
+                  <FontAwesomeIcon icon={['fas', 'paper-plane']} />
                 </ProjectLink>
               )}
 
               <ProjectLink target="blank" title="Source Code" href={project.sourceLink}>
-                <UpdatedFontAwesomeIcon icon={['fab', 'github']} />
+                <FontAwesomeIcon icon={['fab', 'github']} />
               </ProjectLink>
 
             </ProjectLinks>
@@ -94,11 +94,11 @@ const ProjectsTitle = styled.div`
 
 const ProjectsInner = styled.div`
   background-color: white;
-  
-  @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 1024px) {
     display: grid;
     grid-gap: 20px 20px;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
@@ -109,13 +109,22 @@ const Project = styled.div`
   margin: 30px 0;
 
   transition: all 0.3s ease-out;
-  transform: translate( 0, 0);
+  transform: translate(0, 0);
   filter: drop-shadow(0 0 0 ${color.firstColor});
-  
+  background-color: ${color.sixthColor};
+
   &:hover {
-    transform: translate(-5px , -10px);
+    transform: translate(-5px, -10px);
     filter: drop-shadow(5px 10px 10px ${color.firstColor});
   }
+`;
+
+const ProjectImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+  border-radius: 10px;
 `;
 
 const ProjectImage = styled.img`
@@ -127,13 +136,14 @@ const ProjectImage = styled.img`
 `;
 
 const ProjectGradient = styled.div`
-  background-image: linear-gradient(
-    180deg, 
-    rgba(245, 252, 253, 0.85) 0%, 
-    rgba(245, 252, 253, 0.55) 30px, 
-    rgba(255, 255, 255, 0.25) 60px, 
-    rgba(255, 255, 255, 0) 98.35%
-  );
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(245, 252, 253, 0.85) 0%,
+      rgba(245, 252, 253, 0.55) 30px,
+      rgba(255, 255, 255, 0.25) 60px,
+      rgba(255, 255, 255, 0) 98.35%
+    );
   position: absolute;
   width: 100%;
   height: 100%;
@@ -153,17 +163,17 @@ const ProjectName = styled.div`
 const ProjectLanguages = styled.div`
   display: flex;
   flex-wrap: wrap;
-  
+
   @media screen and (min-width: 768px) {
     position: absolute;
     top: 30px;
     left: 10px;
-    display: ${props => (props.showHover ? 'flex' : 'none')}
+    display: ${props => (props.showHover ? 'flex' : 'none')};
   }
 `;
 const ProjectLanguage = styled.div`
   color: ${color.fifthColor};
-  margin:10px;
+  margin: 10px;
   border-radius: 20px;
   background-color: ${color.thirdColor};
   padding: 3px 20px;
@@ -171,8 +181,11 @@ const ProjectLanguage = styled.div`
 `;
 
 const ProjectLinks = styled.div`
+  margin: 10px;
+  display: flex;
+  justify-content: flex-end;
 
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -180,21 +193,25 @@ const ProjectLinks = styled.div`
 `;
 
 const ProjectLink = styled.a`
-  font-size: 40px;
+  font-size: 30px;
   color: ${color.sixthColor};
   background-color: ${color.firstColor};
   border-radius: 50%;
   padding: 15px;
-  transition: all .5s;
+  transition: all 0.5s;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+  }
 
   &:hover {
     color: ${color.thirdColor};
     background-color: ${color.seventhColor};
   }
-`;
-
-const UpdatedFontAwesomeIcon = styled(FontAwesomeIcon)`
-  // color: unset;
 `;
 
 export default Projects;
