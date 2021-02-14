@@ -12,6 +12,10 @@ const index = css`
       overflow-y: scroll;
       scrollbar-color: ${color.secondColor} ${color.firstColor};
       scroll-padding-top: 110px;
+      
+      @media screen and (min-width: 768px) {
+        scroll-padding-top: 0;
+      }
     }
     
     html::-webkit-scrollbar {
