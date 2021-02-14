@@ -31,7 +31,7 @@ const NavBar = () => {
     <NavBarOuter>
       <NavBarInner>
 
-        <DeveloperImage src="assets/hasanozovali.jpg" />
+        <DeveloperImage src="assets/hasanozovali.webp" />
         {navBar.map(oneTab => (
           <NavBarItem href={oneTab.link} title={oneTab.name} key={oneTab.name} className={oneTab.name === 'Intro' ? hideForMobile : ''}>
             {oneTab.name}
