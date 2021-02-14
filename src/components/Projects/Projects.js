@@ -122,6 +122,7 @@ const Project = styled.div`
 const ProjectImageContainer = styled.div`
   width: 100%;
   height: 100%;
+  line-height: 0;
   position: relative;
   object-fit: cover;
   border-radius: 10px;
@@ -130,6 +131,7 @@ const ProjectImageContainer = styled.div`
 const ProjectImage = styled.img`
   width: 100%;
   height: 100%;
+  line-height: 0;
   position: relative;
   object-fit: cover;
   border-radius: 10px;
@@ -166,7 +168,7 @@ const ProjectLanguages = styled.div`
 
   @media screen and (min-width: 768px) {
     position: absolute;
-    top: 30px;
+    top: 50px;
     left: 10px;
     display: ${props => (props.showHover ? 'flex' : 'none')};
   }
