@@ -10,6 +10,7 @@ const seventhColor = '--seventhColor';
 const eightColor = '--eightColor';
 
 const colorVariables = css`
+
   --firstColor: #46c2fb;
   --secondColor: #faac47;
   --thirdColor: #2a2b2e;

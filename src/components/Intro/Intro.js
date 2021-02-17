@@ -82,7 +82,7 @@ const IntroInner = styled.div`
   top: 0;
   left: 0;
   background-image: linear-gradient(to left, var(${color.firstColor}) 0%, var(${color.secondColor}) 100%);
-  opacity: 0.95
+  opacity: 0.95;
 
   @media screen and (min-width: 768px) {
     padding: 0 100px 0 15vw;
