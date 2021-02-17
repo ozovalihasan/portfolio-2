@@ -1,16 +1,18 @@
 import { styled } from '@linaria/react';
 import { css } from '@linaria/core';
 import React, { useState } from 'react';
-import * as color from '../styleSheets/styleVariables';
+import * as color from '../styleSheets/colorVariables';
 
 const contactInput = css`
   outline: none;
   border-radius: 10px;
-  border: 1px solid ${color.fourthColor};
+  border: 1px solid var(${color.fourthColor});
   width: 100%;
   padding: 1rem;
   margin: 1rem 0;
   font-size: 20px;
+  background-color: ${color.fifthColor};
+  color: var(${color.thirdColor});
 
   @media screen and (min-width: 768px) {
     margin: 1rem;
@@ -106,8 +108,9 @@ const ContactFormOuter = styled.div`
 `;
 
 const ContactFormText = styled.div`
-  padding-bottom: 3rem;
   padding: 2rem;
+  padding-bottom: 3rem;
+  background-color: var(${color.fifthColor});
 
   @media screen and (min-width: 768px) {
     padding: 0;
@@ -125,7 +128,6 @@ const ContactFormInner = styled.div`
 `;
 
 const Form = styled.form`
-  background-color: ${color.firstColor};
   padding: 2rem;
   opacity: 1;
 
@@ -143,13 +145,13 @@ const FormHeader = styled.div`
 
 const LeftInput = styled.input`
   @media screen and (min-width: 768px) {
-    margin-left: 0; 
+    margin-left: 0;
   }
 `;
 
 const RightInput = styled.input`
   @media screen and (min-width: 768px) {
-    margin-right: 0; 
+    margin-right: 0;
   }
 `;
 
@@ -160,8 +162,8 @@ const FormBody = styled.textarea`
 
 const ContactButton = styled.button`
   border-radius: 50rem;
-  background-color: ${color.secondColor};
-  color: ${color.thirdColor};
+  background-color: var(${color.secondColor});
+  color: var(${color.thirdColor});
   padding: 1rem;
   width: 100%;
   border: none;
@@ -178,8 +180,8 @@ const FormStatus = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: ${color.secondColor};
-  color: ${color.thirdColor};
+  background-color: var(${color.secondColor});
+  color: var(${color.thirdColor});
 
   @media screen and (min-width: 768px) {
     border-radius: 10px;

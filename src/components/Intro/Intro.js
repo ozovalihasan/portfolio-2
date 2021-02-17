@@ -1,7 +1,7 @@
 import { styled } from '@linaria/react';
 import React from 'react';
 import SocialLinks from '../SocialLinks/SocialLinks';
-import * as color from '../styleSheets/styleVariables';
+import * as color from '../styleSheets/colorVariables';
 
 const Intro = () => (
   <IntroOuter id="intro">
@@ -31,7 +31,7 @@ const Intro = () => (
           I am looking for new opportunities.
         </IntroText>
         <OuterSocialLinks>
-          <SocialLinks hoverColor={color.thirdColor} />
+          <SocialLinks />
         </OuterSocialLinks>
       </IntroDescription>
 
@@ -43,26 +43,24 @@ const Intro = () => (
 const IntroOuter = styled.div`
   width: 100%;
   position: relative;
+
   @media screen and (min-width: 768px) {
     height: 550px;
   }
 `;
 
 const IntroImg = styled.img`
-  width: 100%;  
+  width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -1;
   position: absolute;
-  
-
-
 `;
 
 const SVG = styled.svg`
   width: 100%;
   height: 550px;
-  fill: white;
+  fill: var(${color.fifthColor});
   top: 0;
   left: 0;
   display: none;
@@ -83,7 +81,8 @@ const IntroInner = styled.div`
   flex-direction: column;
   top: 0;
   left: 0;
-  background-image: linear-gradient(to left, rgba(70, 194, 251, 0.95) 0%, rgba(250, 172, 71, 0.95) 100%);
+  background-image: linear-gradient(to left, var(${color.firstColor}) 0%, var(${color.secondColor}) 100%);
+  opacity: 0.95
 
   @media screen and (min-width: 768px) {
     padding: 0 100px 0 15vw;
@@ -92,7 +91,7 @@ const IntroInner = styled.div`
 `;
 
 const IntroDescription = styled.div`
-  color: ${color.fifthColor};
+  color: var(${color.fifthColor});
   padding: 0;
 
   @media screen and (min-width: 768px) {
@@ -113,8 +112,8 @@ const IntroText = styled.p`
 `;
 
 const OuterSocialLinks = styled.div`
-  background-color: white;
-  color: ${color.firstColor};
+  background-color: var(${color.fifthColor});
+  color: var(${color.firstColor});
   padding: 10px 0;
   border-radius: 5px;
   width: 110%;

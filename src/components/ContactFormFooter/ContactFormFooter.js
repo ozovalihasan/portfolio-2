@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@linaria/react';
 import ContactForm from '../ContactForm/ContactForm';
 import Footer from '../Footer/Footer';
-import * as color from '../styleSheets/styleVariables';
+import * as color from '../styleSheets/colorVariables';
 
 const ContactFormFooter = () => (
   <Outer>
@@ -23,20 +23,18 @@ const ContactFormFooter = () => (
 
 const Outer = styled.div`
   position: relative;
-  
-
 `;
 const SVG = styled.svg`
-  background-color: ${color.firstColor};
+  background-color: var(${color.firstColor});
   position: absolute;
   width: 100%;
   height: 100%;
-  fill: ${color.fifthColor};
+  fill: var(${color.fifthColor});
   top: 0;
   left: 0;
   z-index: -1;
   display: none;
-  
+
   @media screen and (min-width: 768px) {
     display: block;
   }

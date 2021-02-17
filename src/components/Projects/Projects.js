@@ -2,7 +2,7 @@ import { styled } from '@linaria/react';
 import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import store from '../store';
-import * as color from '../styleSheets/styleVariables';
+import * as color from '../styleSheets/colorVariables';
 
 const Projects = () => {
   const { projects } = useContext(store);
@@ -81,6 +81,7 @@ const Projects = () => {
 
 const ProjectsOuter = styled.div`
   padding: 2rem;
+  background-color: var(${color.fifthColor});
 
   @media screen and (min-width: 768px) {
     padding: 3rem;
@@ -93,8 +94,6 @@ const ProjectsTitle = styled.div`
 `;
 
 const ProjectsInner = styled.div`
-  background-color: white;
-
   @media screen and (min-width: 1024px) {
     display: grid;
     grid-gap: 20px 20px;
@@ -110,12 +109,12 @@ const Project = styled.div`
 
   transition: all 0.3s ease-out;
   transform: translate(0, 0);
-  filter: drop-shadow(0 0 0 ${color.firstColor});
-  background-color: ${color.sixthColor};
+  filter: drop-shadow(0 0 0 var(${color.firstColor}));
+  background-color: var(${color.sixthColor});
 
   &:hover {
     transform: translate(-5px, -10px);
-    filter: drop-shadow(5px 10px 10px ${color.firstColor});
+    filter: drop-shadow(5px 10px 10px var(${color.firstColor}));
   }
 `;
 
@@ -157,7 +156,7 @@ const ProjectName = styled.div`
   position: absolute;
   top: 10px;
   left: 10px;
-  color: ${color.thirdColor};
+  color: var(${color.thirdColor});
   font-size: 28px;
   font-weight: bold;
 `;
@@ -174,10 +173,10 @@ const ProjectLanguages = styled.div`
   }
 `;
 const ProjectLanguage = styled.div`
-  color: ${color.fifthColor};
+  color: var(${color.fifthColor});
   margin: 10px;
   border-radius: 20px;
-  background-color: ${color.thirdColor};
+  background-color: var(${color.thirdColor});
   padding: 3px 20px;
 
 `;
@@ -196,8 +195,8 @@ const ProjectLinks = styled.div`
 
 const ProjectLink = styled.a`
   font-size: 30px;
-  color: ${color.sixthColor};
-  background-color: ${color.firstColor};
+  color: var(${color.sixthColor});
+  background-color: var(${color.firstColor});
   border-radius: 50%;
   padding: 15px;
   transition: all 0.5s;
@@ -211,8 +210,8 @@ const ProjectLink = styled.a`
   }
 
   &:hover {
-    color: ${color.thirdColor};
-    background-color: ${color.seventhColor};
+    color: var(${color.thirdColor});
+    background-color: var(${color.seventhColor});
   }
 `;
 

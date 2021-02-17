@@ -1,7 +1,7 @@
 import { css } from '@linaria/core';
 import { styled } from '@linaria/react';
 import React from 'react';
-import * as color from '../styleSheets/styleVariables';
+import * as color from '../styleSheets/colorVariables';
 
 const NavBar = () => {
   const navBar = [
@@ -25,7 +25,7 @@ const NavBar = () => {
     @media screen and (min-width: 768px) {
       display: block;
     }
-  `;
+`;
 
   return (
     <NavBarOuter>
@@ -48,8 +48,8 @@ const NavBarOuter = styled.div`
   width: 100%;
   position: fixed;
   z-index: 10;
-  background-color: ${color.fifthColor};
-  box-shadow: 0 0 10px ${color.fourthColor};
+  background-color: var(${color.fifthColor});
+  box-shadow: 0 0 10px var(${color.fourthColor});
 
   @media screen and (min-width: 768px) {
     position: static;
@@ -88,11 +88,11 @@ const NavBarItem = styled.a`
   text-align: center;
   margin: 10px;
   padding: 10px;
-  color: ${color.thirdColor};
+  color: var(${color.thirdColor});
   border-radius: 50rem;
 
   &:hover {
-    background-color: ${color.sixthColor};
+    background-color: var(${color.sixthColor});
   }
 `;
 

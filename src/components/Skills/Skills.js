@@ -1,7 +1,7 @@
 import { styled } from '@linaria/react';
 import React, { useContext } from 'react';
 import store from '../store';
-import * as color from '../styleSheets/styleVariables';
+import * as color from '../styleSheets/colorVariables';
 
 const Skills = () => {
   const { skills } = useContext(store);
@@ -26,6 +26,7 @@ const Skills = () => {
 const SkillsOuter = styled.div`
   width: 100%;
   padding: 2rem;
+  background-color: var(${color.fifthColor});
 
   @media screen and (min-width: 768px) {
     padding: 3rem;
@@ -35,7 +36,7 @@ const SkillsOuter = styled.div`
 
 const SkillsCategory = styled.div`
   width: 100%;
-  background-color: ${color.sixthColor}
+  background-color: var(${color.sixthColor});
   padding: 40px 20px;
   line-height: 1.5;
   margin: 10px 0;
@@ -48,7 +49,7 @@ const SkillsCategoryTitle = styled.h2`
 `;
 
 const SkillsCategoryItem = styled.div`
-  padding: .25rem;
+  padding: 0.25rem;
 `;
 
 export default Skills;

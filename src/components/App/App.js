@@ -13,6 +13,8 @@ import reset from '../styleSheets/reset';
 import index from '../styleSheets/index';
 import Skills from '../Skills/Skills';
 import Loader from '../Loader/Loader';
+import colorVariables from '../styleSheets/colorVariables';
+import * as color from '../styleSheets/colorVariables';
 
 library.add(faGithub, faLinkedin, faAngellist, faTwitter, faFileAlt, faPaperPlane);
 
@@ -20,22 +22,26 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   return (
     <div className={reset} onLoad={() => { setLoading(false); }}>
-      {loading && <Loader />}
-      <AppOuter className={index}>
-        <NavBar />
-        <Main>
-          <Intro />
-          <Projects />
-          <Skills />
-          <ContactFormFooter />
-        </Main>
-      </AppOuter>
+      <div className={colorVariables}>
+        {loading && <Loader />}
+        <AppOuter className={index}>
+          <NavBar />
+          <Main>
+            <Intro />
+            <Projects />
+            <Skills />
+            <ContactFormFooter />
+          </Main>
+        </AppOuter>
+      </div>
     </div>
+
   );
 };
 
 const AppOuter = styled.div`
   display: flex;
+  color: var(${color.thirdColor});
 `;
 
 const Main = styled.div`
