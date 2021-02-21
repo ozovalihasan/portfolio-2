@@ -130,5 +130,7 @@ const initialState = {
   ],
 };
 const store = createContext(initialState);
+const MyContext = createContext({ theme1: 'light' });
 
 export default store;
+export { MyContext };

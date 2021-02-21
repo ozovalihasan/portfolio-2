@@ -25,7 +25,7 @@ const Link = styled.a`
   transition: color 0.5s;
 
   &:hover {
-    color: var(${color.thirdColor});
+    color: ${color.thirdColor};
   }
 `;
 

@@ -6,13 +6,13 @@ import * as color from '../styleSheets/colorVariables';
 const contactInput = css`
   outline: none;
   border-radius: 10px;
-  border: 1px solid var(${color.fourthColor});
+  border: 1px solid ${color.fourthColor};
   width: 100%;
   padding: 1rem;
   margin: 1rem 0;
   font-size: 20px;
   background-color: ${color.fifthColor};
-  color: var(${color.thirdColor});
+  color: ${color.thirdColor};
 
   @media screen and (min-width: 768px) {
     margin: 1rem;
@@ -102,15 +102,18 @@ const ContactForm = () => {
 };
 
 const ContactFormOuter = styled.div`
+  background-color: ${color.fifthColor};
+
   @media screen and (min-width: 768px) {
     padding: 3rem;
+    background-color: transparent;
   }
 `;
 
 const ContactFormText = styled.div`
   padding: 2rem;
   padding-bottom: 3rem;
-  background-color: var(${color.fifthColor});
+  background-color: ${color.fifthColor};
 
   @media screen and (min-width: 768px) {
     padding: 0;
@@ -162,8 +165,8 @@ const FormBody = styled.textarea`
 
 const ContactButton = styled.button`
   border-radius: 50rem;
-  background-color: var(${color.secondColor});
-  color: var(${color.thirdColor});
+  background-color: ${color.secondColor};
+  color: ${color.fifthColor};
   padding: 1rem;
   width: 100%;
   border: none;
@@ -180,8 +183,8 @@ const FormStatus = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(${color.secondColor});
-  color: var(${color.thirdColor});
+  background-color: ${color.secondColor};
+  color: ${color.thirdColor};
 
   @media screen and (min-width: 768px) {
     border-radius: 10px;

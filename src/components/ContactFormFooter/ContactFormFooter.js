@@ -25,11 +25,11 @@ const Outer = styled.div`
   position: relative;
 `;
 const SVG = styled.svg`
-  background-color: var(${color.firstColor});
+  background-color: ${color.firstColor};
   position: absolute;
   width: 100%;
   height: 100%;
-  fill: var(${color.fifthColor});
+  fill: ${color.fifthColor};
   top: 0;
   left: 0;
   z-index: -1;

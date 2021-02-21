@@ -21,7 +21,7 @@ const Footer = () => (
 
 const FooterOuter = styled.div`
   text-align: center;
-  background-color: var(${color.firstColor});
+  background-color: ${color.firstColor};
   padding-top: 30px;
 
   @media screen and (min-width: 768px) {
@@ -30,12 +30,12 @@ const FooterOuter = styled.div`
 `;
 
 const UpdatedSocialLinks = styled.div`
-    color: var(${color.fifthColor});
+    color: ${color.fifthColor};
     display: flex;
     justify-content: center;
 `;
 const FooterDesigner = styled.div`
-  border-top: 1px solid var(${color.secondColor});
+  border-top: 1px solid ${color.secondColor};
   padding: 10px;
 `;
 

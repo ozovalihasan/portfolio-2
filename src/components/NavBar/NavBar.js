@@ -2,6 +2,7 @@ import { css } from '@linaria/core';
 import { styled } from '@linaria/react';
 import React from 'react';
 import * as color from '../styleSheets/colorVariables';
+import ToggleTheme from '../ToggleTheme/ToggleTheme';
 
 const NavBar = () => {
   const navBar = [
@@ -37,6 +38,7 @@ const NavBar = () => {
             {oneTab.name}
           </NavBarItem>
         ))}
+        <ToggleTheme />
 
       </NavBarInner>
     </NavBarOuter>
@@ -48,8 +50,7 @@ const NavBarOuter = styled.div`
   width: 100%;
   position: fixed;
   z-index: 10;
-  background-color: var(${color.fifthColor});
-  box-shadow: 0 0 10px var(${color.fourthColor});
+  box-shadow: 0 0 10px ${color.fourthColor};
 
   @media screen and (min-width: 768px) {
     position: static;
@@ -63,8 +64,10 @@ const NavBarInner = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-
+  background-color: ${color.fifthColor};
+  
   @media screen and (min-width: 768px) {
+    height: 100%;
     position: fixed;
     width: 20%;
     flex-direction: column;
@@ -88,11 +91,11 @@ const NavBarItem = styled.a`
   text-align: center;
   margin: 10px;
   padding: 10px;
-  color: var(${color.thirdColor});
+  color: ${color.thirdColor};
   border-radius: 50rem;
 
   &:hover {
-    background-color: var(${color.sixthColor});
+    background-color: ${color.sixthColor};
   }
 `;
 

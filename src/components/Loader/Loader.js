@@ -9,7 +9,7 @@ const Loader = () => (
 );
 
 const LoaderOuter = styled.div`
-  background-color: var(${color.fifthColor});
+  background-color: ${color.fifthColor};
   width: 100%;
   height: 100%;
   position: fixed;
@@ -23,8 +23,8 @@ const MainLoading = styled.div`
   z-index: 1;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid var(${color.firstColor});
-  border-bottom: 16px solid var(${color.secondColor});
+  border-top: 16px solid ${color.firstColor};
+  border-bottom: 16px solid ${color.secondColor};
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;

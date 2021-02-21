@@ -8,6 +8,7 @@ const Intro = () => (
     <IntroImg src={`${process.env.PUBLIC_URL}/assets/intro.jpg`} alt="" />
 
     <IntroInner>
+      <OpaqueBackground />
       <SVG
         viewBox="0 0 210 150"
         preserveAspectRatio="none"
@@ -57,10 +58,21 @@ const IntroImg = styled.img`
   position: absolute;
 `;
 
+const OpaqueBackground = styled.div`
+  background-image: linear-gradient(to left, ${color.firstColor} 0%, ${color.secondColor} 100%);
+  opacity: 0.95;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+`;
+
 const SVG = styled.svg`
   width: 100%;
   height: 550px;
-  fill: var(${color.fifthColor});
+  fill: ${color.fifthColor};
   top: 0;
   left: 0;
   display: none;
@@ -81,8 +93,7 @@ const IntroInner = styled.div`
   flex-direction: column;
   top: 0;
   left: 0;
-  background-image: linear-gradient(to left, var(${color.firstColor}) 0%, var(${color.secondColor}) 100%);
-  opacity: 0.95;
+  
 
   @media screen and (min-width: 768px) {
     padding: 0 100px 0 15vw;
@@ -91,10 +102,12 @@ const IntroInner = styled.div`
 `;
 
 const IntroDescription = styled.div`
-  color: var(${color.fifthColor});
+  color: ${color.fifthColor};
   padding: 0;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
+    position: absolute;
     padding: 50px;
   }
 `;
@@ -112,8 +125,8 @@ const IntroText = styled.p`
 `;
 
 const OuterSocialLinks = styled.div`
-  background-color: var(${color.fifthColor});
-  color: var(${color.firstColor});
+  background-color: ${color.fifthColor};
+  color: ${color.firstColor};
   padding: 10px 0;
   border-radius: 5px;
   width: 110%;

@@ -81,7 +81,7 @@ const Projects = () => {
 
 const ProjectsOuter = styled.div`
   padding: 2rem;
-  background-color: var(${color.fifthColor});
+  background-color: ${color.fifthColor};
 
   @media screen and (min-width: 768px) {
     padding: 3rem;
@@ -105,16 +105,16 @@ const Project = styled.div`
   position: relative;
   width: 100%;
   border-radius: 10px;
+  border: 1px solid ${color.fourthColor};
   margin: 30px 0;
-
   transition: all 0.3s ease-out;
   transform: translate(0, 0);
-  filter: drop-shadow(0 0 0 var(${color.firstColor}));
-  background-color: var(${color.sixthColor});
+  filter: drop-shadow(0 0 0 ${color.firstColor});
+  background-color: ${color.sixthColor};
 
   &:hover {
     transform: translate(-5px, -10px);
-    filter: drop-shadow(5px 10px 10px var(${color.firstColor}));
+    filter: drop-shadow(5px 10px 10px ${color.firstColor});
   }
 `;
 
@@ -125,6 +125,7 @@ const ProjectImageContainer = styled.div`
   position: relative;
   object-fit: cover;
   border-radius: 10px;
+
 `;
 
 const ProjectImage = styled.img`
@@ -134,29 +135,33 @@ const ProjectImage = styled.img`
   position: relative;
   object-fit: cover;
   border-radius: 10px;
+
 `;
 
 const ProjectGradient = styled.div`
   background-image:
     linear-gradient(
       180deg,
-      rgba(245, 252, 253, 0.85) 0%,
-      rgba(245, 252, 253, 0.55) 30px,
-      rgba(255, 255, 255, 0.25) 60px,
-      rgba(255, 255, 255, 0) 98.35%
+      rgba(var(${color.fifthColorNumbers}), 1) 10px,
+      rgba(var(${color.fifthColorNumbers}), 0.95) 20px,
+      rgba(var(${color.fifthColorNumbers}), 0.55) 40px,
+      rgba(var(${color.fifthColorNumbers}), 0.25) 60px,
+      rgba(var(${color.fifthColorNumbers}), 0) 98.35%
     );
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  border-radius: 10px;
+
 `;
 
 const ProjectName = styled.div`
   position: absolute;
   top: 10px;
   left: 10px;
-  color: var(${color.thirdColor});
+  color: ${color.thirdColor};
   font-size: 28px;
   font-weight: bold;
 `;
@@ -173,10 +178,10 @@ const ProjectLanguages = styled.div`
   }
 `;
 const ProjectLanguage = styled.div`
-  color: var(${color.fifthColor});
+  color: ${color.fifthColor};
   margin: 10px;
   border-radius: 20px;
-  background-color: var(${color.thirdColor});
+  background-color: ${color.thirdColor};
   padding: 3px 20px;
 
 `;
@@ -195,8 +200,8 @@ const ProjectLinks = styled.div`
 
 const ProjectLink = styled.a`
   font-size: 30px;
-  color: var(${color.sixthColor});
-  background-color: var(${color.firstColor});
+  color: ${color.sixthColor};
+  background-color: ${color.firstColor};
   border-radius: 50%;
   padding: 15px;
   transition: all 0.5s;
@@ -210,8 +215,8 @@ const ProjectLink = styled.a`
   }
 
   &:hover {
-    color: var(${color.thirdColor});
-    background-color: var(${color.seventhColor});
+    color: ${color.thirdColor};
+    background-color: ${color.seventhColor};
   }
 `;
 

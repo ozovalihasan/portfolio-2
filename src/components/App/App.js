@@ -1,47 +1,77 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-  faGithub, faLinkedin, faAngellist, faTwitter,
+  faAngellist, faGithub, faLinkedin, faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { faFileAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFileAlt, faPaperPlane, faSun, faMoon,
+} from '@fortawesome/free-solid-svg-icons';
 import { styled } from '@linaria/react';
 import React, { useState } from 'react';
 import ContactFormFooter from '../ContactFormFooter/ContactFormFooter';
 import Intro from '../Intro/Intro';
+import Loader from '../Loader/Loader';
 import NavBar from '../NavBar/NavBar';
 import Projects from '../Projects/Projects';
+import Skills from '../Skills/Skills';
+import { MyContext } from '../store';
+import * as color from '../styleSheets/colorVariables';
 import reset from '../styleSheets/reset';
 import index from '../styleSheets/index';
-import Skills from '../Skills/Skills';
-import Loader from '../Loader/Loader';
-import colorVariables from '../styleSheets/colorVariables';
-import * as color from '../styleSheets/colorVariables';
 
-library.add(faGithub, faLinkedin, faAngellist, faTwitter, faFileAlt, faPaperPlane);
+library.add(faGithub, faLinkedin, faAngellist, faTwitter, faFileAlt, faPaperPlane, faSun, faMoon);
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState(localStorage.theme);
+
+  const toggleTheme = () => {
+    const updatedTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(updatedTheme);
+    localStorage.theme = updatedTheme;
+  };
+
   return (
-    <div className={reset} onLoad={() => { setLoading(false); }}>
-      <div className={colorVariables}>
-        {loading && <Loader />}
-        <AppOuter className={index}>
-          <NavBar />
-          <Main>
-            <Intro />
-            <Projects />
-            <Skills />
-            <ContactFormFooter />
-          </Main>
-        </AppOuter>
+    <MyContext.Provider value={{ theme, toggleTheme }}>
+      <div className={{ reset, index }} onLoad={() => { setLoading(false); }}>
+        <div className={theme === 'dark' ? color.darkTheme : color.lightTheme}>
+          {loading && <Loader />}
+          <AppOuter>
+            <NavBar />
+            <Main>
+              <Intro />
+              <Projects />
+              <Skills />
+              <ContactFormFooter />
+            </Main>
+          </AppOuter>
+        </div>
       </div>
-    </div>
+    </MyContext.Provider>
 
   );
 };
 
 const AppOuter = styled.div`
   display: flex;
-  color: var(${color.thirdColor});
+  color: ${color.thirdColor};
+  overflow-y: scroll;
+  scrollbar-color: ${color.secondColor} ${color.firstColor};
+  scroll-padding-top: 110px;
+  height: 100vh;
+
+  @media screen and (min-width: 768px) {
+    scroll-padding-top: 0;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background: ${color.firstColor};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${color.secondColor};
+  }
+
 `;
 
 const Main = styled.div`

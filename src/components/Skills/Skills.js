@@ -26,7 +26,7 @@ const Skills = () => {
 const SkillsOuter = styled.div`
   width: 100%;
   padding: 2rem;
-  background-color: var(${color.fifthColor});
+  background-color: ${color.fifthColor};
 
   @media screen and (min-width: 768px) {
     padding: 3rem;
@@ -36,7 +36,7 @@ const SkillsOuter = styled.div`
 
 const SkillsCategory = styled.div`
   width: 100%;
-  background-color: var(${color.sixthColor});
+  background-color: ${color.sixthColor};
   padding: 40px 20px;
   line-height: 1.5;
   margin: 10px 0;
