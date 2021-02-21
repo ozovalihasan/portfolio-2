@@ -9,7 +9,7 @@ const ToggleTheme = () => {
 
   return (
     <ThemeButton type="button" onClick={toggleTheme}>
-      <UpdatedFontAwesomeIcon icon={theme === 'dark' ? ['fas', 'moon'] : ['fas', 'sun']} theme={theme} />
+      <UpdatedFontAwesomeIcon icon={theme === 'dark' ? ['fas', 'sun'] : ['fas', 'moon']} theme={theme} />
     </ThemeButton>
   );
 };
