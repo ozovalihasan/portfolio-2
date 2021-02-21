@@ -9,7 +9,7 @@ const ToggleTheme = () => {
 
   return (
     <ThemeButton type="button" onClick={toggleTheme}>
-      <UpdatedFontAwesomeIcon icon={theme === 'light' ? ['fas', 'moon'] : ['fas', 'sun']} theme={theme} />
+      <UpdatedFontAwesomeIcon icon={theme === 'dark' ? ['fas', 'moon'] : ['fas', 'sun']} theme={theme} />
     </ThemeButton>
   );
 };
@@ -23,6 +23,6 @@ const ThemeButton = styled.button`
 const UpdatedFontAwesomeIcon = styled(FontAwesomeIcon)`
   font-size: 40px;
   margin: 10px;
-  color: ${props => (props.theme === 'light' ? color.thirdColor : color.firstColor)}
+  color: ${props => (props.theme === 'dark' ? color.firstColor : color.thirdColor)}
 `;
 export default ToggleTheme;
