@@ -56,7 +56,7 @@ const AppOuter = styled.div`
   color: ${color.thirdColor};
   overflow-y: scroll;
   scrollbar-color: ${color.secondColor} ${color.firstColor};
-  scroll-padding-top: 110px;
+  scroll-padding-top: 51.5px;
   height: 100vh;
 
   @media screen and (min-width: 768px) {
@@ -76,7 +76,7 @@ const AppOuter = styled.div`
 
 const Main = styled.div`
   width: 100%;
-  padding-top: 115px;
+  padding-top: 51.5px;
 
   @media screen and (min-width: 768px) {
     padding-top: 0;

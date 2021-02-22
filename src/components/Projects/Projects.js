@@ -105,7 +105,7 @@ const Project = styled.div`
   position: relative;
   width: 100%;
   border-radius: 10px;
-  border: 1px solid ${color.fourthColor};
+  border: 2px solid ${color.fifthColor};
   margin: 30px 0;
   transition: all 0.3s ease-out;
   transform: translate(0, 0);
@@ -125,7 +125,7 @@ const ProjectImageContainer = styled.div`
   position: relative;
   object-fit: cover;
   border-radius: 10px;
-
+  border: 2px solid ${color.fifthColor};
 `;
 
 const ProjectImage = styled.img`
@@ -135,7 +135,7 @@ const ProjectImage = styled.img`
   position: relative;
   object-fit: cover;
   border-radius: 10px;
-
+  border: 2px solid ${color.fifthColor};
 `;
 
 const ProjectGradient = styled.div`

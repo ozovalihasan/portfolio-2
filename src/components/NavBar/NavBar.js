@@ -63,10 +63,11 @@ const NavBarInner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0px;
   background-color: ${color.fifthColor};
   
   @media screen and (min-width: 768px) {
+    padding: 20px;
     height: 100%;
     position: fixed;
     width: 20%;
@@ -77,11 +78,12 @@ const NavBarInner = styled.div`
 
 const DeveloperImage = styled.img`
   background-size: cover;
-  width: 75px;
+  width: 35px;
   border-radius: 50rem;
   margin: 0 20px;
 
   @media screen and (min-width: 768px) {
+    width: 75px;
     margin: 20px;
   }
 `;
@@ -89,13 +91,17 @@ const DeveloperImage = styled.img`
 const NavBarItem = styled.a`
   width: 100%;
   text-align: center;
-  margin: 10px;
+  margin: 0;
   padding: 10px;
   color: ${color.thirdColor};
   border-radius: 50rem;
 
   &:hover {
     background-color: ${color.sixthColor};
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 10px;
   }
 `;
 

@@ -21,7 +21,7 @@ const ThemeButton = styled.button`
 `;
 
 const UpdatedFontAwesomeIcon = styled(FontAwesomeIcon)`
-  font-size: 40px;
+  font-size: 28px;
   margin: 10px;
   color: ${props => (props.theme === 'dark' ? color.firstColor : color.thirdColor)}
 `;
