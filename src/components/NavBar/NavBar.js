@@ -32,7 +32,12 @@ const NavBar = () => {
     <NavBarOuter>
       <NavBarInner>
 
-        <DeveloperImage src="assets/hasanozovali.webp" alt="Developer, Hasan Ozovali" />
+        <DeveloperImage
+          src="assets/hasanozovali.webp"
+          alt="Developer, Hasan Ozovali"
+          height="75"
+          width="75"
+        />
         {navBar.map(oneTab => (
           <NavBarItem href={oneTab.link} title={oneTab.name} key={oneTab.name} className={oneTab.name === 'Intro' ? hideForMobile : ''}>
             {oneTab.name}
@@ -79,11 +84,13 @@ const NavBarInner = styled.div`
 const DeveloperImage = styled.img`
   background-size: cover;
   width: 35px;
+  height: 35px;
   border-radius: 50rem;
   margin: 0 20px;
 
   @media screen and (min-width: 768px) {
     width: 75px;
+    height: 75px;
     margin: 20px;
   }
 `;
