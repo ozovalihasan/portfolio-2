@@ -61,28 +61,34 @@ const ContactForm = () => {
         <Form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
           <FormHeader>
             <input type="hidden" name="form-name" value="contact" />
+            <LabelsScreenReader for="name" />
             <LeftInput
               type="text"
               placeholder="Full Name*"
               className={contactInput}
               name="name"
+              id="name"
               value={name}
               onChange={e => setName(e.target.value)}
               required
             />
+            <LabelsScreenReader for="email" />
             <RightInput
               type="email"
               placeholder="Email*"
               className={contactInput}
               name="email"
+              id="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
             />
           </FormHeader>
+          <LabelsScreenReader for="message" />
           <FormBody
             placeholder="Message*"
             name="message"
+            id="message"
             value={message}
             onChange={e => setMessage(e.target.value)}
             className={contactInput}
@@ -166,10 +172,19 @@ const FormBody = styled.textarea`
 const ContactButton = styled.button`
   border-radius: 50rem;
   background-color: ${color.secondColor};
-  color: ${color.fifthColor};
+  color: ${color.thirdColor};
   padding: 1rem;
   width: 100%;
   border: none;
+`;
+
+const LabelsScreenReader = styled.label`
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 `;
 
 const FormStatus = styled.div`

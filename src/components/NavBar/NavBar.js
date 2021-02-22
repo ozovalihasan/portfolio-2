@@ -32,7 +32,7 @@ const NavBar = () => {
     <NavBarOuter>
       <NavBarInner>
 
-        <DeveloperImage src="assets/hasanozovali.webp" />
+        <DeveloperImage src="assets/hasanozovali.webp" alt="Developer, Hasan Ozovali" />
         {navBar.map(oneTab => (
           <NavBarItem href={oneTab.link} title={oneTab.name} key={oneTab.name} className={oneTab.name === 'Intro' ? hideForMobile : ''}>
             {oneTab.name}

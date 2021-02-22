@@ -34,13 +34,14 @@ const Projects = () => {
             onMouseOut={() => handleMouseLeave(index)}
             onBlur={() => handleMouseLeave(index)}
             className={showHover[index]}
+            alt={project.name}
           >
             <ProjectImageContainer
               showHover={showHover[index]}
             >
               <ProjectImage
                 src={`assets/${project.projectImage}`}
-                alt={`Screenshot of ${project.name}`}
+                alt={project.name}
               />
               <ProjectGradient />
             </ProjectImageContainer>
