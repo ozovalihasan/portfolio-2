@@ -6,22 +6,22 @@ import {
   faFileAlt, faPaperPlane, faSun, faMoon,
 } from '@fortawesome/free-solid-svg-icons';
 import { styled } from '@linaria/react';
-import React, { useState } from 'react';
-import ContactFormFooter from '../ContactFormFooter/ContactFormFooter';
-import Intro from '../Intro/Intro';
-import Loader from '../Loader/Loader';
-import NavBar from '../NavBar/NavBar';
-import Projects from '../Projects/Projects';
-import Skills from '../Skills/Skills';
+import React, { useState, lazy, Suspense } from 'react';
 import { MyContext } from '../store';
+import Loader from '../Loader/Loader';
 import * as color from '../styleSheets/colorVariables';
 import reset from '../styleSheets/reset';
 import index from '../styleSheets/index';
 
+const ContactFormFooter = lazy(() => import('../ContactFormFooter/ContactFormFooter'));
+const Intro = lazy(() => import('../Intro/Intro'));
+const NavBar = lazy(() => import('../NavBar/NavBar'));
+const Projects = lazy(() => import('../Projects/Projects'));
+const Skills = lazy(() => import('../Skills/Skills'));
+
 library.add(faGithub, faLinkedin, faAngellist, faTwitter, faFileAlt, faPaperPlane, faSun, faMoon);
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState(localStorage.theme);
 
   const toggleTheme = () => {
@@ -32,18 +32,19 @@ const App = () => {
 
   return (
     <MyContext.Provider value={{ theme, toggleTheme }}>
-      <div className={{ reset, index }} onLoad={() => { setLoading(false); }}>
+      <div className={{ reset, index }}>
         <div className={theme === 'dark' ? color.darkTheme : color.lightTheme}>
-          {loading && <Loader />}
-          <AppOuter>
-            <NavBar />
-            <Main>
-              <Intro />
-              <Projects />
-              <Skills />
-              <ContactFormFooter />
-            </Main>
-          </AppOuter>
+          <Suspense fallback={Loader()}>
+            <AppOuter>
+              <NavBar />
+              <Main>
+                <Intro />
+                <Projects />
+                <Skills />
+                <ContactFormFooter />
+              </Main>
+            </AppOuter>
+          </Suspense>
         </div>
       </div>
     </MyContext.Provider>
