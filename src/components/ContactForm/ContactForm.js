@@ -97,6 +97,7 @@ const ContactForm = () => {
           <ContactButton
             type="submit"
             name="submit"
+            aria-label="submit"
           >
             Get in touch
           </ContactButton>

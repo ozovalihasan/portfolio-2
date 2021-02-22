@@ -8,7 +8,7 @@ const ToggleTheme = () => {
   const { theme, toggleTheme } = useContext(MyContext);
 
   return (
-    <ThemeButton name="toggle-theme" type="button" onClick={toggleTheme}>
+    <ThemeButton name="toggle-theme" type="button" onClick={toggleTheme} aria-label="toggle-theme">
       <UpdatedFontAwesomeIcon icon={theme === 'dark' ? ['fas', 'sun'] : ['fas', 'moon']} theme={theme} />
     </ThemeButton>
   );
