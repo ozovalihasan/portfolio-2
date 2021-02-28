@@ -1,10 +1,8 @@
 import { styled } from '@linaria/react';
 import React, { useContext, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useLocation } from 'react-router-dom';
 import store from '../store';
 import * as color from '../styleSheets/colorVariables';
-import LinkButton from '../LinkButton/LinkButton';
 // import Modal from '../Modal/Modal';
 
 const Projects = () => {
@@ -71,19 +69,7 @@ const Projects = () => {
 
                 ))}
               </ProjectLanguages>
-              <ProjectLinks>
 
-                {project.liveLink && (
-                  <LinkButton target="blank" title="Live Demo Link" href={project.liveLink}>
-                    <FontAwesomeIcon icon={['fas', 'paper-plane']} />
-                  </LinkButton>
-                )}
-
-                <LinkButton target="blank" title="Source Code" href={project.sourceLink}>
-                  <FontAwesomeIcon icon={['fab', 'github']} />
-                </LinkButton>
-
-              </ProjectLinks>
             </Link>
 
           </Project>
@@ -198,19 +184,6 @@ const ProjectLanguage = styled.div`
   border-radius: 20px;
   background-color: ${color.thirdColor};
   padding: 3px 20px;
-
-`;
-
-const ProjectLinks = styled.div`
-  margin: 10px;
-  display: flex;
-  justify-content: flex-end;
-
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
 `;
 
 export default Projects;
