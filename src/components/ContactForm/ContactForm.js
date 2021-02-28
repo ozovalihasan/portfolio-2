@@ -61,7 +61,7 @@ const ContactForm = () => {
         <Form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
           <FormHeader>
             <input type="hidden" name="form-name" value="contact" />
-            <LabelsScreenReader for="name" />
+            <LabelsScreenReader htmlFor="name" />
             <LeftInput
               type="text"
               placeholder="Full Name*"
@@ -72,7 +72,7 @@ const ContactForm = () => {
               onChange={e => setName(e.target.value)}
               required
             />
-            <LabelsScreenReader for="email" />
+            <LabelsScreenReader htmlFor="email" />
             <RightInput
               type="email"
               placeholder="Email*"
@@ -84,7 +84,7 @@ const ContactForm = () => {
               required
             />
           </FormHeader>
-          <LabelsScreenReader for="message" />
+          <LabelsScreenReader htmlFor="message" />
           <FormBody
             placeholder="Message*"
             name="message"
