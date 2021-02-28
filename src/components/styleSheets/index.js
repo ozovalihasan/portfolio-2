@@ -23,7 +23,7 @@ const index = css`
 
     body {
       font-family: Helvetica, Arial, sans-serif;
-      font-size: 20px;
+      font-size: 14px;
       line-height: 1.5;
     }
 
