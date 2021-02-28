@@ -34,7 +34,7 @@ const ModalOneProject = () => {
           alt={project.name}
         />
         <ProjectInformation>
-          <h1>{project.name}</h1>
+          <ProjectName>{project.name}</ProjectName>
 
           <ProjectLanguages>
             {project.usedLanguages.map(language => (
@@ -45,7 +45,7 @@ const ModalOneProject = () => {
             ))}
           </ProjectLanguages>
 
-          <div>{project.description}</div>
+          <ProjectDescription>{project.description}</ProjectDescription>
 
           <ProjectLinks>
 
@@ -81,17 +81,27 @@ const ModalOuter = styled.div`
   right: 0;
   background: rgba(var(${color.fifthColorNumbers}), 0.8);
   z-index: 20;
+  overflow-y: scroll;
+
+  @media screen and (min-width: 768px) {
+    overflow-y: unset;
+  }
 `;
 
 const ModalInner = styled.div`
   position: absolute;
   top: 10%;
-  bottom: 10%;
-  left: 10%;
-  right: 10%;
+  left: 5%;
+  right: 5%;
   box-shadow: 0 0 20px ${color.thirdColor};
   background: ${color.fifthColor};
   border-radius: 20px;
+
+  @media screen and (min-width: 768px) {
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -109,27 +119,43 @@ const CloseButton = styled.button`
 `;
 const ProjectImage = styled.img`
   width: 100%;
-  height: 100%;
+  height: 80vh;;
   line-height: 0;
   position: relative;
   object-fit: cover;
   border-radius: 10px;
+
+  @media screen and (min-width: 768px) {
+    height: 100%;
+  }
 `;
 
 const ProjectInformation = styled.div`
   padding: 10px;
   width: 100%;
   background: ${color.fifthColor};
-  position: absolute;
   bottom: 0;
   height: auto;
   border-radius: 10px;
 
+  @media screen and (min-width: 768px) {
+    position: absolute;
+  }
+
+`;
+
+const ProjectName = styled.div`
+  top: 10px;
+  left: 10px;
+  color: ${color.thirdColor};
+  font-size: 28px;
+  font-weight: bold;
 `;
 
 const ProjectLanguages = styled.div`
   display: flex;
-
+  flex-wrap: wrap;
+  
   @media screen and (min-width: 768px) {
     display: flex;
   }
@@ -142,6 +168,10 @@ const ProjectLanguage = styled.div`
   background-color: ${color.thirdColor};
   padding: 3px 20px;
 
+`;
+
+const ProjectDescription = styled.div`
+  color: ${color.thirdColor};
 `;
 
 const ProjectLinks = styled.div`
@@ -158,7 +188,13 @@ const ProjectLink = styled(LinkButton)`
 `;
 
 const LinkName = styled.div`
+
   font-size: 20px;
   padding: 0 10px;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `;
 export default ModalOneProject;
