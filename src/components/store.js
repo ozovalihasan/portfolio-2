@@ -3,7 +3,9 @@ import { createContext } from 'react';
 const initialState = {
   projects: [
     {
+      id: 0,
       name: 'Dr. Ti',
+      description: 'Did you do ...? Don\'t remember, Track It (Dr. Ti) is a mobile application. Any user may create an item to track and add piece to check.',
       projectImage: 'project0.webp',
       usedLanguages: [
         'React',
@@ -15,7 +17,9 @@ const initialState = {
       sourceLink: 'https://github.com/ozovalihasan/track',
     },
     {
+      id: 1,
       name: 'Whistle',
+      description: 'Whistle is a social networking website for divers. It is built by using Ruby on Rails and deployed to Heroku.',
       projectImage: 'project1.webp',
       usedLanguages: [
         'HTML/CSS',
@@ -26,7 +30,9 @@ const initialState = {
       sourceLink: 'https://github.com/ozovalihasan/whistle#readme',
     },
     {
+      id: 2,
       name: 'Slack Tic-tac-toe Bot',
+      description: 'A bot to play tic-tac-toe game on Slack is developed. ',
       projectImage: 'project2.webp',
       usedLanguages: [
         'Ruby',
@@ -36,7 +42,9 @@ const initialState = {
       sourceLink: 'https://github.com/ozovalihasan/slack-tictactoe-bot#readme',
     },
     {
+      id: 3,
       name: 'Airshow',
+      description: 'The responsive website of the Airshow event is developed. ',
       projectImage: 'project3.webp',
       usedLanguages: [
         'HTML',
@@ -47,7 +55,9 @@ const initialState = {
       sourceLink: 'https://github.com/ozovalihasan/capstoneHtmlCss#readme',
     },
     {
+      id: 4,
       name: 'Escape',
+      description: 'Turn-based RPG game "Escape". Escaping from island isn\'t easy.',
       projectImage: 'project4.webp',
       usedLanguages: [
         'JavaScript',
@@ -57,7 +67,9 @@ const initialState = {
       sourceLink: 'https://github.com/ozovalihasan/escape-rpg-game#readme',
     },
     {
+      id: 5,
       name: 'BookStore CMS',
+      description: 'A bookstore content management system is a program to track the situation of books.',
       projectImage: 'project5.webp',
       usedLanguages: [
         'React',

@@ -35,9 +35,7 @@ const Intro = () => (
           <SocialLinks />
         </OuterSocialLinks>
       </IntroDescription>
-
     </IntroInner>
-
   </IntroOuter>
 );
 

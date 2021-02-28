@@ -1,13 +1,12 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from '@linaria/react';
 import React, { useContext, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import store from '../store';
 import * as color from '../styleSheets/colorVariables';
-import LinkButton from '../LinkButton/LinkButton';
-// import Modal from '../Modal/Modal';
 
-const Projects = () => {
+const OneProject = () => {
+  const { id } = useParams();
   const { projects } = useContext(store);
   const [showHover, setShowHover] = useState([]);
 
@@ -23,97 +22,64 @@ const Projects = () => {
     setShowHover(updateShowHover);
   };
 
-  const location = useLocation();
+  const project = projects[parseInt(id, 10)];
+
+  if (!project) return null;
 
   return (
-    <ProjectsOuter id="portfolio">
-      <ProjectsTitle>
-        My portfolio
-      </ProjectsTitle>
+    <div>
+      <Project
+        onMouseOver={() => handleMouseEnter(id)}
+        onFocus={() => handleMouseEnter(id)}
+        onMouseOut={() => handleMouseLeave(id)}
+        onBlur={() => handleMouseLeave(id)}
+        className={showHover[id]}
+        alt={project.name}
+      >
 
-      <ProjectsInner>
-        {projects.map((project, index) => (
-          <Project
-            key={project.name}
-            onMouseOver={() => handleMouseEnter(index)}
-            onFocus={() => handleMouseEnter(index)}
-            onMouseOut={() => handleMouseLeave(index)}
-            onBlur={() => handleMouseLeave(index)}
-            className={showHover[index]}
+        <ProjectImageContainer
+          showHover={showHover[id]}
+        >
+          <ProjectImage
+            src={`/assets/${project.projectImage}`}
             alt={project.name}
-          >
-            <Link
-              to={{
-                pathname: `/project/${index}`,
-                state: { background: location },
-              }}
-            >
-              <ProjectImageContainer
-                showHover={showHover[index]}
-              >
-                <ProjectImage
-                  src={`/assets/${project.projectImage}`}
-                  alt={project.name}
-                />
-                <ProjectGradient />
-              </ProjectImageContainer>
+          />
 
-              <ProjectName>
-                {project.name}
-              </ProjectName>
+          <ProjectGradient />
+        </ProjectImageContainer>
 
-              <ProjectLanguages showHover={showHover[index]}>
+        <ProjectName>
+          {project.name}
+        </ProjectName>
 
-                {project.usedLanguages.map(language => (
-                  <ProjectLanguage key={language}>
-                    {language}
-                  </ProjectLanguage>
+        <ProjectLanguages showHover={showHover[id]}>
 
-                ))}
-              </ProjectLanguages>
-              <ProjectLinks>
+          {project.usedLanguages.map(language => (
+            <ProjectLanguage key={language}>
+              {language}
+            </ProjectLanguage>
 
-                {project.liveLink && (
-                  <LinkButton target="blank" title="Live Demo Link" href={project.liveLink}>
-                    <FontAwesomeIcon icon={['fas', 'paper-plane']} />
-                  </LinkButton>
-                )}
+          ))}
+        </ProjectLanguages>
+        <ProjectLinks>
 
-                <LinkButton target="blank" title="Source Code" href={project.sourceLink}>
-                  <FontAwesomeIcon icon={['fab', 'github']} />
-                </LinkButton>
+          {project.liveLink && (
+            <ProjectLink target="blank" title="Live Demo Link" href={project.liveLink}>
+              <FontAwesomeIcon icon={['fas', 'paper-plane']} />
+            </ProjectLink>
+          )}
 
-              </ProjectLinks>
-            </Link>
+          <ProjectLink target="blank" title="Source Code" href={project.sourceLink}>
+            <FontAwesomeIcon icon={['fab', 'github']} />
+          </ProjectLink>
 
-          </Project>
-        ))}
-      </ProjectsInner>
-    </ProjectsOuter>
+        </ProjectLinks>
+
+      </Project>
+
+    </div>
   );
 };
-
-const ProjectsOuter = styled.div`
-  padding: 2rem;
-  background-color: ${color.fifthColor};
-
-  @media screen and (min-width: 768px) {
-    padding: 3rem;
-  }
-`;
-
-const ProjectsTitle = styled.div`
-  font-size: 28px;
-  font-weight: 700;
-`;
-
-const ProjectsInner = styled.div`
-  @media screen and (min-width: 1024px) {
-    display: grid;
-    grid-gap: 20px 20px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-`;
 
 const Project = styled.div`
   position: relative;
@@ -191,7 +157,6 @@ const ProjectLanguages = styled.div`
     display: ${props => (props.showHover ? 'flex' : 'none')};
   }
 `;
-
 const ProjectLanguage = styled.div`
   color: ${color.fifthColor};
   margin: 10px;
@@ -213,4 +178,26 @@ const ProjectLinks = styled.div`
   }
 `;
 
-export default Projects;
+const ProjectLink = styled.a`
+  font-size: 30px;
+  color: ${color.sixthColor};
+  background-color: ${color.firstColor};
+  border-radius: 50%;
+  padding: 15px;
+  transition: all 0.5s;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+  }
+
+  &:hover {
+    color: ${color.thirdColor};
+    background-color: ${color.seventhColor};
+  }
+`;
+
+export default OneProject;
