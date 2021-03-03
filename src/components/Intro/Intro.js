@@ -120,6 +120,7 @@ const IntroSubtitle = styled.h2`
 
 const IntroText = styled.p`
   padding: 20px 0;
+  font-size: 30px;
 `;
 
 const OuterSocialLinks = styled.div`
