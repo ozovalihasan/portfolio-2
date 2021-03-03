@@ -2,7 +2,7 @@ import { styled } from '@linaria/react';
 import * as color from '../styleSheets/colorVariables';
 
 const LinkButton = styled.a`
-  font-size: 30px;
+  font-size: 20px;
   color: ${color.sixthColor};
   background-color: ${color.firstColor};
   border-radius: 50%;
