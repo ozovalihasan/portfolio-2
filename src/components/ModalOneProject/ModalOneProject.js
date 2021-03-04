@@ -1,41 +1,54 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from '@linaria/react';
 import React, { useContext } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import LinkButton from '../LinkButton/LinkButton';
 import store from '../store';
 import * as color from '../styleSheets/colorVariables';
 
-const ModalOneProject = () => {
-  const history = useHistory();
-  const { id } = useParams();
+const ModalOneProject = ({ projectId, setProjectId }) => {
   const { projects } = useContext(store);
 
-  const project = projects.find(project => project.id === parseInt(id, 10));
+  const project = projects.find(project => project.id === parseInt(projectId, 10));
 
   if (!project) return null;
 
-  const back = e => {
-    e.stopPropagation();
-    history.goBack();
-  };
-
   return (
-    <ModalOuter onClick={back}>
+    <ModalOuter onClick={() => setProjectId('')}>
+      <CloseButton type="button" onClick={() => setProjectId('')}>
+        <FontAwesomeIcon icon={['fas', 'times']} />
+      </CloseButton>
       <ModalInner onClick={e => {
         e.stopPropagation();
       }}
       >
-        <CloseButton type="button" onClick={back}>
-          <FontAwesomeIcon icon={['fas', 'times']} />
-        </CloseButton>
+
         <ProjectImage
           src={`/assets/${project.projectImage}`}
           alt={project.name}
         />
         <ProjectInformation>
-          <ProjectName>{project.name}</ProjectName>
+          <ProjectHeader>
+            <ProjectName>{project.name}</ProjectName>
+            <ProjectLinks>
+              {project.liveLink && (
+              <ProjectLink target="blank" title="Live Demo Link" href={project.liveLink}>
+                <LinkName>
+                  See Live
+                </LinkName>
+                <FontAwesomeIcon icon={['fas', 'paper-plane']} />
+              </ProjectLink>
+              )}
 
+              <ProjectLink target="blank" title="Source Code" href={project.sourceLink}>
+                <LinkName>
+                  See Source
+                </LinkName>
+                <FontAwesomeIcon icon={['fab', 'github']} />
+              </ProjectLink>
+
+            </ProjectLinks>
+          </ProjectHeader>
           <ProjectLanguages>
             {project.usedLanguages.map(language => (
               <ProjectLanguage key={language}>
@@ -46,26 +59,6 @@ const ModalOneProject = () => {
           </ProjectLanguages>
 
           <ProjectDescription>{project.description}</ProjectDescription>
-
-          <ProjectLinks>
-
-            {project.liveLink && (
-              <ProjectLink target="blank" title="Live Demo Link" href={project.liveLink}>
-                <LinkName>
-                  See Live
-                </LinkName>
-                <FontAwesomeIcon icon={['fas', 'paper-plane']} />
-              </ProjectLink>
-            )}
-
-            <ProjectLink target="blank" title="Source Code" href={project.sourceLink}>
-              <LinkName>
-                See Source
-              </LinkName>
-              <FontAwesomeIcon icon={['fab', 'github']} />
-            </ProjectLink>
-
-          </ProjectLinks>
 
         </ProjectInformation>
       </ModalInner>
@@ -93,11 +86,14 @@ const ModalInner = styled.div`
   top: 10%;
   left: 5%;
   right: 5%;
+  bottom: 5%;
   box-shadow: 0 0 20px ${color.thirdColor};
   background: ${color.fifthColor};
   border-radius: 20px;
+  overflow-y: scroll;
 
   @media screen and (min-width: 768px) {
+    overflow-y: unset;
     left: 10%;
     right: 10%;
     bottom: 10%;
@@ -106,20 +102,24 @@ const ModalInner = styled.div`
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10%;
+  right: 5%;
   z-index: 30;
-  transform: translate(50%, -50%);
-  border-radius: 50%;
+  border-radius: 0 10px 0 20px;
   font-size: 30px;
   background-color: ${color.firstColor};
   color: ${color.sixthColor};
   border: none;
   outline: none;
+
+  @media screen and (min-width: 768px) {
+    right: 10%;
+  }
 `;
+
 const ProjectImage = styled.img`
   width: 100%;
-  height: 80vh;;
+  height: auto;;
   line-height: 0;
   position: relative;
   object-fit: cover;
@@ -141,15 +141,53 @@ const ProjectInformation = styled.div`
   @media screen and (min-width: 768px) {
     position: absolute;
   }
+`;
+
+const ProjectHeader = styled.div`
 
 `;
 
 const ProjectName = styled.div`
-  top: 10px;
+  
   left: 10px;
   color: ${color.thirdColor};
   font-size: 28px;
   font-weight: bold;
+  position: relative;
+  height: 100%;
+
+  @media screen and (min-width: 768px) {
+    position: unset;
+    top: 10px;
+  }
+`;
+
+const ProjectLinks = styled.div`
+  display: flex;
+  top: 0;
+  right: 0;
+  
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    transform: translateY(-120%);
+  }
+`;
+
+const ProjectLink = styled(LinkButton)`
+  border-radius: 100px;
+  width: auto;
+  
+`;
+
+const LinkName = styled.div`
+  font-size: 20px;
+  padding: 0 10px;
+  display: none;
+  
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 const ProjectLanguages = styled.div`
@@ -167,34 +205,15 @@ const ProjectLanguage = styled.div`
   border-radius: 20px;
   background-color: ${color.thirdColor};
   padding: 3px 20px;
-
 `;
 
 const ProjectDescription = styled.div`
   color: ${color.thirdColor};
 `;
 
-const ProjectLinks = styled.div`
-  display: flex;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translateY(-120%);
-  heigth: auto;
-`;
+ModalOneProject.propTypes = {
+  projectId: PropTypes.number.isRequired,
+  setProjectId: PropTypes.func.isRequired,
+};
 
-const ProjectLink = styled(LinkButton)`
-  border-radius: 100px;
-`;
-
-const LinkName = styled.div`
-
-  font-size: 20px;
-  padding: 0 10px;
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
-`;
 export default ModalOneProject;

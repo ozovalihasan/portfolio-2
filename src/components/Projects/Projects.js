@@ -1,13 +1,13 @@
 import { styled } from '@linaria/react';
 import React, { useContext, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import ModalOneProject from '../ModalOneProject/ModalOneProject';
 import store from '../store';
 import * as color from '../styleSheets/colorVariables';
-// import Modal from '../Modal/Modal';
 
 const Projects = () => {
   const { projects } = useContext(store);
   const [showHover, setShowHover] = useState([]);
+  const [showProjectId, setShowProjectId] = useState('');
 
   const handleMouseEnter = e => {
     const updateShowHover = [...showHover];
@@ -21,10 +21,9 @@ const Projects = () => {
     setShowHover(updateShowHover);
   };
 
-  const location = useLocation();
-
   return (
     <ProjectsOuter id="portfolio">
+
       <ProjectsTitle>
         My portfolio
       </ProjectsTitle>
@@ -40,12 +39,7 @@ const Projects = () => {
             className={showHover[index]}
             alt={project.name}
           >
-            <Link
-              to={{
-                pathname: `/project/${index}`,
-                state: { background: location },
-              }}
-            >
+            <ProjectButton type="button" onClick={() => setShowProjectId(project.id.toString())}>
               <ProjectImageContainer
                 showHover={showHover[index]}
               >
@@ -70,10 +64,14 @@ const Projects = () => {
                 ))}
               </ProjectLanguages>
 
-            </Link>
+            </ProjectButton>
 
           </Project>
         ))}
+        {
+          showProjectId?.toString()
+          && <ModalOneProject projectId={showProjectId} setProjectId={setShowProjectId} />
+        }
       </ProjectsInner>
     </ProjectsOuter>
   );
@@ -155,6 +153,13 @@ const ProjectGradient = styled.div`
   left: 0;
   border-radius: 10px;
 
+`;
+
+const ProjectButton = styled.div`
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  height: 100%;
 `;
 
 const ProjectName = styled.div`

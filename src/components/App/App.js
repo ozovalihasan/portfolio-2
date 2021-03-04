@@ -7,9 +7,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { styled } from '@linaria/react';
 import React, { useState } from 'react';
-import {
-  Route, Switch, useLocation,
-} from 'react-router-dom';
 import ContactFormFooter from '../ContactFormFooter/ContactFormFooter';
 import Intro from '../Intro/Intro';
 import Loader from '../Loader/Loader';
@@ -20,8 +17,6 @@ import { MyContext } from '../store';
 import * as color from '../styleSheets/colorVariables';
 import reset from '../styleSheets/reset';
 import index from '../styleSheets/index';
-import OneProject from '../OneProject/OneProject';
-import ModalOneProject from '../ModalOneProject/ModalOneProject';
 
 library.add(faGithub, faLinkedin, faAngellist,
   faTwitter, faFileAlt, faPaperPlane,
@@ -37,9 +32,6 @@ const App = () => {
     localStorage.theme = updatedTheme;
   };
 
-  const location = useLocation();
-  const background = location.state && location.state.background;
-
   window.onload = () => setLoading(false);
 
   return (
@@ -49,31 +41,15 @@ const App = () => {
       >
         <div className={theme === 'dark' ? color.darkTheme : color.lightTheme}>
           {loading && <Loader />}
-
-          <Switch location={background || location}>
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <AppOuter>
-                  <NavBar />
-                  <Main>
-                    <Intro />
-                    <Projects />
-                    <Skills />
-                    <ContactFormFooter />
-                  </Main>
-                </AppOuter>
-              )}
-            />
-            <Route
-              path="/project/:id"
-              render={() => (
-                <OneProject />
-              )}
-            />
-          </Switch>
-          {background && <Route path="/project/:id" render={() => <ModalOneProject />} />}
+          <AppOuter>
+            <NavBar />
+            <Main>
+              <Intro />
+              <Projects />
+              <Skills />
+              <ContactFormFooter />
+            </Main>
+          </AppOuter>
         </div>
       </div>
     </MyContext.Provider>
@@ -85,7 +61,7 @@ const AppOuter = styled.div`
   color: ${color.thirdColor};
   overflow-y: scroll;
   scrollbar-color: ${color.secondColor} ${color.firstColor};
-  scroll-padding-top: 51.5px;
+  scroll-padding-top: 50.5px;
   height: 100vh;
 
   @media screen and (min-width: 768px) {
@@ -105,7 +81,7 @@ const AppOuter = styled.div`
 
 const Main = styled.div`
   width: 100%;
-  padding-top: 51.5px;
+  padding-top: 50.5px;
 
   @media screen and (min-width: 768px) {
     padding-top: 0;
