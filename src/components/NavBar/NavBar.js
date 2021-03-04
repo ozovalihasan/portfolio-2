@@ -56,11 +56,13 @@ const NavBarOuter = styled.div`
   position: fixed;
   z-index: 10;
   box-shadow: 0 0 10px ${color.fourthColor};
+  font-size: 18px;
 
   @media screen and (min-width: 768px) {
     position: static;
     width: 20%;
     box-shadow: none;
+    font-size: inherit;
   }
 `;
 
