@@ -72,13 +72,9 @@ const ModalOuter = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
+  height: 100vh;
   background: rgba(var(${color.fifthColorNumbers}), 0.8);
   z-index: 20;
-  overflow-y: scroll;
-
-  @media screen and (min-width: 768px) {
-    overflow-y: unset;
-  }
 `;
 
 const ModalInner = styled.div`
