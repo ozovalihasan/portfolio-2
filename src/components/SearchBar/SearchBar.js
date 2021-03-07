@@ -50,6 +50,10 @@ const SearchInput = styled.input`
   outline: none;
   color: ${color.thirdColor};
   font-size: 20px;
+  
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+  }
 `;
 
 SearchBar.propTypes = {
