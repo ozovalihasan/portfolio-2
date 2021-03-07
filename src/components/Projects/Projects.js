@@ -136,7 +136,7 @@ const ProjectsInner = styled.div`
   }
 `;
 
-const Project = styled.div`
+const Project = styled.section`
   position: relative;
   width: 100%;
   border-radius: 10px;
@@ -192,11 +192,14 @@ const ProjectGradient = styled.div`
 
 `;
 
-const ProjectButton = styled.div`
+const ProjectButton = styled.button`
+  background-color: transparent;
   cursor: pointer;
   width: 100%;
   border: none;
   height: 100%;
+  padding: 0;
+  border-radius: 10px;
 `;
 
 const ProjectName = styled.div`

@@ -50,7 +50,7 @@ const NavBar = () => {
   );
 };
 
-const NavBarOuter = styled.div`
+const NavBarOuter = styled.nav`
   flex-shrink: 0;
   width: 100%;
   position: fixed;

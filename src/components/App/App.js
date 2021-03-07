@@ -79,7 +79,7 @@ const AppOuter = styled.div`
 
 `;
 
-const Main = styled.div`
+const Main = styled.main`
   width: 100%;
   padding-top: 50.5px;
 
