@@ -19,7 +19,7 @@ const Footer = () => (
   </FooterOuter>
 );
 
-const FooterOuter = styled.div`
+const FooterOuter = styled.footer`
   text-align: center;
   background-color: ${color.firstColor};
   padding-top: 30px;

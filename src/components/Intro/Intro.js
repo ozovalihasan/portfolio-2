@@ -39,7 +39,7 @@ const Intro = () => (
   </IntroOuter>
 );
 
-const IntroOuter = styled.div`
+const IntroOuter = styled.header`
   width: 100%;
   position: relative;
 

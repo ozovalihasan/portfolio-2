@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from '@linaria/react';
-import React, { useContext } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import LinkButton from '../LinkButton/LinkButton';
 import store from '../store';
@@ -13,9 +13,25 @@ const ModalOneProject = ({ projectId, setProjectId }) => {
 
   if (!project) return null;
 
+  const closeModal = () => setProjectId('');
+
+  const escFunction = useCallback(event => {
+    if (event.keyCode === 27) {
+      closeModal();
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener('keydown', escFunction);
+
+    return () => {
+      document.removeEventListener('keydown', escFunction);
+    };
+  }, []);
+
   return (
     <ModalOuter onClick={() => setProjectId('')}>
-      <CloseButton type="button" onClick={() => setProjectId('')}>
+      <CloseButton type="button" onClick={closeModal}>
         <FontAwesomeIcon icon={['fas', 'times']} />
       </CloseButton>
       <ModalInner onClick={e => {
