@@ -208,7 +208,7 @@ const ProjectDescription = styled.div`
 `;
 
 ModalOneProject.propTypes = {
-  projectId: PropTypes.number.isRequired,
+  projectId: PropTypes.string.isRequired,
   setProjectId: PropTypes.func.isRequired,
 };
 

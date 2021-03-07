@@ -99,7 +99,7 @@ const Projects = () => {
             </Project>
           )}
         {
-          showProjectId?.toString()
+          showProjectId
           && <ModalOneProject projectId={showProjectId} setProjectId={setShowProjectId} />
         }
       </ProjectsInner>
