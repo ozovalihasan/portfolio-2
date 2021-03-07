@@ -144,8 +144,7 @@ const ProjectHeader = styled.div`
 `;
 
 const ProjectName = styled.div`
-  
-  left: 10px;
+  margin: 10px;
   color: ${color.thirdColor};
   font-size: 28px;
   font-weight: bold;
@@ -204,6 +203,7 @@ const ProjectLanguage = styled.div`
 `;
 
 const ProjectDescription = styled.div`
+  margin: 10px;
   color: ${color.thirdColor};
 `;
 
