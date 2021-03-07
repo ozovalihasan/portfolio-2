@@ -3,7 +3,7 @@ import {
   faAngellist, faGithub, faLinkedin, faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import {
-  faFileAlt, faPaperPlane, faSun, faMoon, faTimes,
+  faFileAlt, faPaperPlane, faSun, faMoon, faTimes, faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 import { styled } from '@linaria/react';
 import React, { useState } from 'react';
@@ -20,7 +20,7 @@ import index from '../styleSheets/index';
 
 library.add(faGithub, faLinkedin, faAngellist,
   faTwitter, faFileAlt, faPaperPlane,
-  faSun, faMoon, faTimes);
+  faSun, faMoon, faTimes, faSearch);
 
 const App = () => {
   const [loading, setLoading] = useState(true);

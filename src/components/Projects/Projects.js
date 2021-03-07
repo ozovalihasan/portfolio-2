@@ -1,11 +1,26 @@
 import { styled } from '@linaria/react';
 import React, { useContext, useState } from 'react';
 import ModalOneProject from '../ModalOneProject/ModalOneProject';
+import SearchBar from '../SearchBar/SearchBar';
 import store from '../store';
 import * as color from '../styleSheets/colorVariables';
 
 const Projects = () => {
+  const [searchKeyword, setSearchKeyword] = useState('');
   const { projects } = useContext(store);
+  let filteredProjects = projects;
+
+  if (searchKeyword) {
+    filteredProjects = projects.filter(project => (
+      JSON.stringify(project.usedLanguages).toLowerCase().includes(searchKeyword.toLowerCase())
+    ));
+  }
+
+  const searchKeys = projects.reduce((allKeys, project) => {
+    allKeys.push(...project.usedLanguages);
+    return allKeys;
+  }, []);
+
   const [showHover, setShowHover] = useState([]);
   const [showProjectId, setShowProjectId] = useState('');
 
@@ -23,13 +38,22 @@ const Projects = () => {
 
   return (
     <ProjectsOuter id="portfolio">
+      <TitleSearch>
 
-      <ProjectsTitle>
-        My portfolio
-      </ProjectsTitle>
+        <ProjectsTitle>
+          My portfolio
+        </ProjectsTitle>
 
+        <SearchBar
+          searchKeys={[...new Set(searchKeys.sort())]}
+          projects={projects}
+          keyword={searchKeyword}
+          setKeyword={setSearchKeyword}
+        />
+
+      </TitleSearch>
       <ProjectsInner>
-        {projects.map((project, index) => (
+        {filteredProjects.length ? filteredProjects.map((project, index) => (
           <Project
             key={project.name}
             onMouseOver={() => handleMouseEnter(index)}
@@ -67,9 +91,15 @@ const Projects = () => {
             </ProjectButton>
 
           </Project>
-        ))}
+        ))
+
+          : (
+            <Project>
+              No result...
+            </Project>
+          )}
         {
-          showProjectId?.toString()
+          showProjectId
           && <ModalOneProject projectId={showProjectId} setProjectId={setShowProjectId} />
         }
       </ProjectsInner>
@@ -83,6 +113,13 @@ const ProjectsOuter = styled.div`
 
   @media screen and (min-width: 768px) {
     padding: 3rem;
+  }
+`;
+
+const TitleSearch = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
   }
 `;
 
