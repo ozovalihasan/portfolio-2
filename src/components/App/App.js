@@ -17,6 +17,7 @@ import { MyContext } from '../store';
 import * as color from '../styleSheets/colorVariables';
 import reset from '../styleSheets/reset';
 import index from '../styleSheets/index';
+import WakeUp from '../WakeUp/WakeUp';
 
 library.add(faGithub, faLinkedin, faAngellist,
   faTwitter, faFileAlt, faPaperPlane,
@@ -24,6 +25,7 @@ library.add(faGithub, faLinkedin, faAngellist,
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [wakeUp, setWakeUp] = useState(false);
   const [theme, setTheme] = useState(localStorage.theme);
 
   const toggleTheme = () => {
@@ -32,7 +34,10 @@ const App = () => {
     localStorage.theme = updatedTheme;
   };
 
-  window.onload = () => setLoading(false);
+  window.onload = () => {
+    setLoading(false);
+    setWakeUp(true);
+  };
 
   return (
     <MyContext.Provider value={{ theme, toggleTheme }}>
@@ -41,6 +46,7 @@ const App = () => {
       >
         <div className={theme === 'dark' ? color.darkTheme : color.lightTheme}>
           {loading && <Loader />}
+          {wakeUp && <WakeUp />}
           <AppOuter>
             <NavBar />
             <Main>
