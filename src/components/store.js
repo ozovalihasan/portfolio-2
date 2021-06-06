@@ -95,12 +95,13 @@ const initialState = {
     {
       name: 'Frameworks',
       items: [
+        'Ruby on Rails',
+        'React',
+        'RSpec',
+        'Jest',
         'Bootstrap',
         'Sass',
-        'Ruby on Rails',
-        'RSpec',
         'Phaser 3',
-        'React',
         'Redux/Redux Toolkit',
       ],
     },
