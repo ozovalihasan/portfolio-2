@@ -99,6 +99,8 @@ const initialState = {
         'React',
         'RSpec',
         'Jest',
+        'TypeScript',
+        'Tailwind CSS',
         'Bootstrap',
         'Sass',
         'Phaser 3',
