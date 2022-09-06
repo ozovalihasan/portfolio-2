@@ -4,6 +4,20 @@ const initialState = {
   projects: [
     {
       id: 0,
+      name: 'EAD',
+      description: 'EAD(Entity Association Diagram) is a tool to make a development process of a Rails Project easier and faster. It contains two parts; user interface and a gem. Defined associations can be implemented to a Rails project in a second by using the gem.',
+      projectImage: 'EAD-portfolio.webp',
+      usedLanguages: [
+        'React',
+        'Redux Toolkit',
+        'Ruby',
+        'react-beautiful-dnd',
+      ],
+      liveLink: 'https://ead.ozovalihasan.com/',
+      sourceLink: 'https://github.com/ozovalihasan/ead/#readme',
+    },
+    {
+      id: 1,
       name: 'Dr. Ti',
       description: 'Did you do ...? Don\'t remember, Track It (Dr. Ti) is a mobile application. Any user may create an item to track and add piece to check.',
       projectImage: 'project0.webp',
@@ -17,7 +31,7 @@ const initialState = {
       sourceLink: 'https://github.com/ozovalihasan/track',
     },
     {
-      id: 1,
+      id: 2,
       name: 'Whistle',
       description: 'Whistle is a social networking website for divers. It is built by using Ruby on Rails and deployed to Heroku.',
       projectImage: 'project1.webp',
@@ -30,7 +44,7 @@ const initialState = {
       sourceLink: 'https://github.com/ozovalihasan/whistle#readme',
     },
     {
-      id: 2,
+      id: 3,
       name: 'Slack Tic-tac-toe Bot',
       description: 'A bot to play tic-tac-toe game on Slack is developed. ',
       projectImage: 'project2.webp',
@@ -40,19 +54,6 @@ const initialState = {
       ],
       liveLink: '',
       sourceLink: 'https://github.com/ozovalihasan/slack-tictactoe-bot#readme',
-    },
-    {
-      id: 3,
-      name: 'Airshow',
-      description: 'The responsive website of the Airshow event is developed. ',
-      projectImage: 'project3.webp',
-      usedLanguages: [
-        'HTML',
-        'CSS',
-        'Bootstrap',
-      ],
-      liveLink: 'https://airshow.ozovalihasan.com/',
-      sourceLink: 'https://github.com/ozovalihasan/capstoneHtmlCss#readme',
     },
     {
       id: 4,
@@ -94,12 +95,15 @@ const initialState = {
     {
       name: 'Frameworks',
       items: [
+        'Ruby on Rails',
+        'React',
+        'RSpec',
+        'Jest',
+        'TypeScript',
+        'Tailwind CSS',
         'Bootstrap',
         'Sass',
-        'Ruby on Rails',
-        'RSpec',
         'Phaser 3',
-        'React',
         'Redux/Redux Toolkit',
       ],
     },

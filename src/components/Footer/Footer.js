@@ -14,7 +14,7 @@ const Footer = () => (
       © Hasan Özovalı
     </FooterDesigner>
     <FooterRight>
-      2020 Design inspired by Microverse
+      2022 Design inspired by Microverse
     </FooterRight>
   </FooterOuter>
 );
