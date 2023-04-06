@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import Loader from '../Loader/Loader';
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState<"light" | "dark">(localStorage.theme);
 
   const toggleTheme = () => {
@@ -24,8 +26,15 @@ const App = () => {
     }
   }, []);
 
+  window.onload = () => {
+    setLoading(false);
+  };
+
+
   return (
     <div className="bg-first h-screen w-full">
+      {loading && <Loader />}
+
       <button onClick={toggleTheme}> Dark / Light </button>
     </div>
   )
