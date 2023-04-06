@@ -1,6 +1,22 @@
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+import {
+  faAngellist, faGithub, faLinkedin, faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  faFileAlt, faPaperPlane, faSun, faMoon, faTimes, faSearch,
+} from '@fortawesome/free-solid-svg-icons';
+
 import { useEffect, useState } from "react";
 import Loader from '../Loader/Loader';
 import WakeUp from '../WakeUp/WakeUp';
+import { ThemeContext } from '../store';
+import ToggleTheme from "../ToggleTheme/ToggleTheme";
+
+
+library.add(faGithub, faLinkedin, faAngellist,
+  faTwitter, faFileAlt, faPaperPlane,
+  faSun, faMoon, faTimes, faSearch);
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -35,12 +51,16 @@ const App = () => {
 
 
   return (
-    <div className="bg-first h-screen w-full">
-      {loading && <Loader />}
-      {wakeUp && <WakeUp />}
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
 
-      <button onClick={toggleTheme}> Dark / Light </button>
-    </div>
+      <div className="bg-first h-screen w-full">
+        {loading && <Loader />}
+        {wakeUp && <WakeUp />}
+
+        <ToggleTheme></ToggleTheme>
+      </div>
+    </ThemeContext.Provider>
+
   )
 }
 
