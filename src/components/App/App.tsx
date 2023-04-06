@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Loader from '../Loader/Loader';
+import WakeUp from '../WakeUp/WakeUp';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [wakeUp, setWakeUp] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">(localStorage.theme);
 
   const toggleTheme = () => {
@@ -28,12 +30,14 @@ const App = () => {
 
   window.onload = () => {
     setLoading(false);
+    setWakeUp(true);
   };
 
 
   return (
     <div className="bg-first h-screen w-full">
       {loading && <Loader />}
+      {wakeUp && <WakeUp />}
 
       <button onClick={toggleTheme}> Dark / Light </button>
     </div>
