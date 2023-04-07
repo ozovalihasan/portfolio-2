@@ -1,6 +1,30 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { createContext } from 'react';
 
-const initialState = {
+type StateType = {
+  projects: {
+    id: number;
+    name: string;
+    description: string;
+    projectImage: string;
+    usedLanguages: string[];
+    liveLink: string;
+    sourceLink: string;
+  }[],
+  skills: {
+    name: string;
+    items: string[];
+  }[],
+  socialLinks: {
+    name: string;
+    link: string;
+    icon: IconProp;
+  }[]
+
+}
+
+
+const initialState: StateType = {
   projects: [
     {
       id: 0,
