@@ -12,6 +12,7 @@ import Loader from '../Loader/Loader';
 import WakeUp from '../WakeUp/WakeUp';
 import { ThemeContext } from '../store';
 import NavBar from '../NavBar/NavBar';
+import SocialLinks from '../SocialLinks/SocialLinks';
 
 
 library.add(faGithub, faLinkedin, faAngellist,
@@ -59,6 +60,9 @@ const App = () => {
 
         <div>
           <NavBar />
+          <main>
+            <SocialLinks />
+          </main>
         </div>
 
         
