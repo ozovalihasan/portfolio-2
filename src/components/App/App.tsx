@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import Loader from '../Loader/Loader';
 import WakeUp from '../WakeUp/WakeUp';
 import { ThemeContext } from '../store';
-import ToggleTheme from "../ToggleTheme/ToggleTheme";
+import NavBar from '../NavBar/NavBar';
 
 
 library.add(faGithub, faLinkedin, faAngellist,
@@ -57,7 +57,11 @@ const App = () => {
         {loading && <Loader />}
         {wakeUp && <WakeUp />}
 
-        <ToggleTheme></ToggleTheme>
+        <div>
+          <NavBar />
+        </div>
+
+        
       </div>
     </ThemeContext.Provider>
 
