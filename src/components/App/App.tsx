@@ -16,6 +16,7 @@ import SocialLinks from '../SocialLinks/SocialLinks';
 import Intro from '../Intro/Intro';
 import Projects from '../Projects/Projects';
 import Skills from '../Skills/Skills';
+import ContactFormFooter from '../ContactFormFooter/ContactFormFooter';
 
 
 library.add(faGithub, faLinkedin, faAngellist,
@@ -67,6 +68,7 @@ const App = () => {
             <Intro />
             <Projects />
             <Skills />
+            <ContactFormFooter />
           </main>
         </div>
 
