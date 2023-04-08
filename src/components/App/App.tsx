@@ -15,6 +15,7 @@ import NavBar from '../NavBar/NavBar';
 import SocialLinks from '../SocialLinks/SocialLinks';
 import Intro from '../Intro/Intro';
 import Projects from '../Projects/Projects';
+import Skills from '../Skills/Skills';
 
 
 library.add(faGithub, faLinkedin, faAngellist,
@@ -65,6 +66,7 @@ const App = () => {
           <main>
             <Intro />
             <Projects />
+            <Skills />
           </main>
         </div>
 
