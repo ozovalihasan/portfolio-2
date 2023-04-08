@@ -13,6 +13,7 @@ import WakeUp from '../WakeUp/WakeUp';
 import { ThemeContext } from '../store';
 import NavBar from '../NavBar/NavBar';
 import SocialLinks from '../SocialLinks/SocialLinks';
+import Intro from '../Intro/Intro';
 
 
 library.add(faGithub, faLinkedin, faAngellist,
@@ -61,7 +62,7 @@ const App = () => {
         <div>
           <NavBar />
           <main>
-            <SocialLinks />
+            <Intro />
           </main>
         </div>
 
