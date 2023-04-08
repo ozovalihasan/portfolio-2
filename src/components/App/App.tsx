@@ -14,6 +14,7 @@ import { ThemeContext } from '../store';
 import NavBar from '../NavBar/NavBar';
 import SocialLinks from '../SocialLinks/SocialLinks';
 import Intro from '../Intro/Intro';
+import Projects from '../Projects/Projects';
 
 
 library.add(faGithub, faLinkedin, faAngellist,
@@ -63,6 +64,7 @@ const App = () => {
           <NavBar />
           <main>
             <Intro />
+            <Projects />
           </main>
         </div>
 
