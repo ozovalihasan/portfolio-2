@@ -47,13 +47,22 @@ const App = () => {
     } else {
       document.querySelector(':root')?.classList.add("dark")
     }
+
+    if (document.readyState === "complete") {
+
+      setLoading(false);
+      setWakeUp(true);
+
+    } else {
+
+      window.onload = () => {
+        setLoading(false);
+        setWakeUp(true);
+      };
+
+    }
+    
   }, []);
-
-  window.onload = () => {
-    setLoading(false);
-    setWakeUp(true);
-  };
-
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
