@@ -122,8 +122,6 @@ const initialState: StateType = {
         'Remote working',
         'Remote pair programming',
         'Teamwork',
-        'Babel',
-        'Webpack',
       ],
     },
   ],
