@@ -76,18 +76,6 @@ const initialState: StateType = {
       sourceLink: 'https://github.com/ozovalihasan/whistle#readme',
     },
     {
-      id: 3,
-      name: 'Slack Tic-tac-toe Bot',
-      description: 'A bot to play tic-tac-toe game on Slack is developed. ',
-      projectImage: project2Image,
-      usedLanguages: [
-        'Ruby',
-        'Slack API',
-      ],
-      liveLink: '',
-      sourceLink: 'https://github.com/ozovalihasan/slack-tictactoe-bot#readme',
-    },
-    {
       id: 4,
       name: 'Escape',
       description: 'Turn-based RPG game "Escape". Escaping from island isn\'t easy.',
@@ -98,19 +86,6 @@ const initialState: StateType = {
       ],
       liveLink: 'https://escape.ozovalihasan.com/',
       sourceLink: 'https://github.com/ozovalihasan/escape-rpg-game#readme',
-    },
-    {
-      id: 5,
-      name: 'BookStore CMS',
-      description: 'A bookstore content management system is a program to track the situation of books.',
-      projectImage: project5Image,
-      usedLanguages: [
-        'React',
-        'Redux',
-        'Ruby on Rails',
-      ],
-      liveLink: 'https://bookstore.ozovalihasan.com/',
-      sourceLink: 'https://github.com/ozovalihasan/bookstore',
     },
   ],
   skills: [
