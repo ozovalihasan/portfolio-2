@@ -72,7 +72,7 @@ const initialState: StateType = {
         'Ruby',
         'Ruby on Rails',
       ],
-      liveLink: 'https://whiistle.herokuapp.com/',
+      liveLink: 'https://whiistle.fly.dev/',
       sourceLink: 'https://github.com/ozovalihasan/whistle#readme',
     },
     {
