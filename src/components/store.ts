@@ -8,7 +8,7 @@ import project4Image from "../assets/project4.webp"
 type StateType = {
   projects: {
     id: number;
-    name: string;
+    name: 'EAD' | 'Dr. Ti' | 'Whistle' | 'Escape';
     description: string;
     projectImage: string;
     usedLanguages: string[];
