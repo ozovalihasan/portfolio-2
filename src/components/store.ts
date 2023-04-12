@@ -65,7 +65,7 @@ const initialState: StateType = {
     {
       id: 2,
       name: 'Whistle',
-      description: 'Whistle is a social networking website for divers. It is built by using Ruby on Rails and deployed to Heroku.',
+      description: 'Whistle is a social networking website for divers. It is built by using Ruby on Rails.',
       projectImage: project1Image,
       usedLanguages: [
         'HTML/CSS',
