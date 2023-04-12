@@ -13,7 +13,7 @@ const SearchBar = ( { searchKeys, keyword, setKeyword }: SearchBarType )  => {
 
   return (
     <div className='flex items-center relative ml-4'>
-      <FontAwesomeIcon icon={['fas', 'search']} className='absolute right-2' />
+      
       <input 
         className='custom-input'
         list="search-keys" 
@@ -25,6 +25,7 @@ const SearchBar = ( { searchKeys, keyword, setKeyword }: SearchBarType )  => {
         placeholder="Search" 
       />
 
+      <FontAwesomeIcon icon={['fas', 'search']} className='absolute right-2 text-third ' />
       <datalist id="search-keys">
         {searchKeys.map(searchWord => <option key={searchWord} value={searchWord} />)}
       </datalist>

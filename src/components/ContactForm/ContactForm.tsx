@@ -30,7 +30,7 @@ const ContactForm = () => {
     e.preventDefault();
   };
   return (
-    <div id="contact" className='bg-transparent'>
+    <div id="contact" className='bg-transparent text-fifth md:text-third'>
       <div>
         <div className='font-bold text-lg'>
           Interested in collaborating
@@ -88,7 +88,7 @@ const ContactForm = () => {
           />
           
           <div className='w-full '>
-            <input type="submit" value="Get in touch" className='text-fifth bg-first rounded-xl p-4 mt-4 border border-solid border-fifth w-full dark:brightness-200 brightness-110 cursor-pointer'/>
+            <input type="submit" value="Get in touch" className='text-third bg-first rounded-xl p-4 mt-4 border border-solid border-fifth w-full  cursor-pointer'/>
           </div>
         </form>
         {formStatus && <div>{formStatus}</div>}

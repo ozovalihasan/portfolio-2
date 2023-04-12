@@ -57,7 +57,7 @@
 
 @layer components {
   .custom-input {
-    @apply bg-fifth border-solid border-2 border-first rounded-lg p-2 w-full dark:brightness-200 brightness-110 ;
+    @apply bg-fifth border-solid border-2 border-fifth rounded-lg p-2 w-full dark:brightness-200 brightness-110 ;
   }
 
   

@@ -5,9 +5,9 @@ const Intro = () => (
     
     <div className='relative w-full'>
       
-      <div className="h-auto md:h-[550px] top-0 left-0 w-full ">
+      <div className="h-auto md:h-[550px] top-0 left-0 w-full text-fifth">
         <img src={introImage} alt="" className='object-cover w-full h-full absolute top-0 left-0 -z-10'/>
-        <div className="absolute w-full top-0 left-0 bg-transparent bg-gradient-to-r from-first to-first bg-opacity-95 h-full opacity-95 -z-10"></div>
+        <div className="absolute w-full top-0 left-0 bg-transparent bg-gradient-to-r from-third to-third bg-opacity-95 h-full opacity-95 -z-10"></div>
         <svg
           className='hidden md:block fill-fifth w-full h-full absolute top-0 left-0 -z-10'
           viewBox="0 0 210 150"

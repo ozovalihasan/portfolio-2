@@ -23,10 +23,10 @@ const Projects = () => {
   const [showProjectId, setShowProjectId] = useState('');
 
   return (
-    <div id="portfolio" className='px-16 bg-fifth pt-8'>
-      <div className="flex">
+    <div id="portfolio" className='px-16 bg-fifth pt-16'>
+      <div className="flex items-center">
 
-        <div className="text-3xl font-bold ">
+        <div className="text-3xl font-bold h-full whitespace-nowrap">
           My portfolio
         </div>
 
