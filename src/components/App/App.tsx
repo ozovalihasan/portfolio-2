@@ -67,13 +67,16 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
 
-      <div className="bg-first h-screen w-full">
+      <div className="w-full text-third bg-first/20">
         {loading && <Loader />}
         {wakeUp && <WakeUp />}
 
-        <div>
-          <NavBar />
-          <main>
+        <div className='md:flex'>
+          <div className='md:w-1/5'>
+            <NavBar />
+          </div>
+          
+          <main className='scroll-py-16 md:scroll-py-0 md:w-4/5 '>
             <Intro />
             <Projects />
             <Skills />

@@ -1,5 +1,11 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { createContext } from 'react';
+import EADImage from "../assets/EAD-portfolio.webp"
+import project0Image from "../assets/project0.webp"
+import project1Image from "../assets/project1.webp"
+import project2Image from "../assets/project2.webp"
+import project4Image from "../assets/project4.webp"
+import project5Image from "../assets/project5.webp"
 
 type StateType = {
   projects: {
@@ -30,7 +36,7 @@ const initialState: StateType = {
       id: 0,
       name: 'EAD',
       description: 'EAD(Entity Association Diagram) is a tool to make a development process of a Rails Project easier and faster. It contains two parts; user interface and a gem. Defined associations can be implemented to a Rails project in a second by using the gem.',
-      projectImage: 'EAD-portfolio.webp',
+      projectImage: EADImage,
       usedLanguages: [
         'React',
         'TypeScript',
@@ -46,7 +52,7 @@ const initialState: StateType = {
       id: 1,
       name: 'Dr. Ti',
       description: 'Did you do ...? Don\'t remember, Track It (Dr. Ti) is a mobile application. Any user may create an item to track and add piece to check.',
-      projectImage: 'project0.webp',
+      projectImage: project0Image,
       usedLanguages: [
         'React',
         'Redux Toolkit',
@@ -60,7 +66,7 @@ const initialState: StateType = {
       id: 2,
       name: 'Whistle',
       description: 'Whistle is a social networking website for divers. It is built by using Ruby on Rails and deployed to Heroku.',
-      projectImage: 'project1.webp',
+      projectImage: project1Image,
       usedLanguages: [
         'HTML/CSS',
         'Ruby',
@@ -73,7 +79,7 @@ const initialState: StateType = {
       id: 3,
       name: 'Slack Tic-tac-toe Bot',
       description: 'A bot to play tic-tac-toe game on Slack is developed. ',
-      projectImage: 'project2.webp',
+      projectImage: project2Image,
       usedLanguages: [
         'Ruby',
         'Slack API',
@@ -85,7 +91,7 @@ const initialState: StateType = {
       id: 4,
       name: 'Escape',
       description: 'Turn-based RPG game "Escape". Escaping from island isn\'t easy.',
-      projectImage: 'project4.webp',
+      projectImage: project4Image,
       usedLanguages: [
         'JavaScript',
         'Phaser 3',
@@ -97,7 +103,7 @@ const initialState: StateType = {
       id: 5,
       name: 'BookStore CMS',
       description: 'A bookstore content management system is a program to track the situation of books.',
-      projectImage: 'project5.webp',
+      projectImage: project5Image,
       usedLanguages: [
         'React',
         'Redux',
