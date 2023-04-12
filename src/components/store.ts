@@ -3,9 +3,7 @@ import { createContext } from 'react';
 import EADImage from "../assets/EAD-portfolio.webp"
 import project0Image from "../assets/project0.webp"
 import project1Image from "../assets/project1.webp"
-import project2Image from "../assets/project2.webp"
 import project4Image from "../assets/project4.webp"
-import project5Image from "../assets/project5.webp"
 
 type StateType = {
   projects: {
