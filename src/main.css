@@ -1,0 +1,64 @@
+
+@import "reset.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --firstColor: 0, 147, 161;
+    --secondColor: 250, 172, 71;
+    --thirdColor: 42, 43, 46;
+    --fourthColor: 115, 121, 134;
+    --fifthColor: 230, 230, 230;
+    --sixthColor: 245, 252, 253;
+    --seventhColor: 162, 224, 253;
+    --eightColor: 252, 213, 162;
+
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+
+  }
+
+  @media screen and (min-width: 768px) {
+    :root {
+
+      font-size: 20px;
+    }
+  }
+  
+  :root[class="dark"] {
+    --firstColor: 60, 100, 130;
+    --secondColor: 125, 86, 35;
+    --thirdColor: 213, 212, 209;
+    --fourthColor: 134, 123, 115;
+    --fifthColor: 21, 21, 21;
+    --sixthColor: 3, 3, 2;
+    --seventhColor: 93, 31, 2;
+    --eightColor: 3, 42, 93;
+  }
+
+  .project-image-gradient {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(var(--fifthColor), 1) 10px,
+        rgba(var(--fifthColor), 0.95) 20px,
+        rgba(var(--fifthColor), 0.55) 40px,
+        rgba(var(--fifthColor), 0.25) 60px,
+        rgba(var(--fifthColor), 0) 100%
+      );
+
+  }
+
+}
+
+@layer components {
+  .custom-input {
+    @apply bg-fifth border-solid border-2 border-fifth rounded-lg p-2 w-full dark:brightness-200 brightness-110 ;
+  }
+
+  html {
+    @apply scroll-pt-16 md:scroll-pt-0 scroll-smooth
+  }
+}
