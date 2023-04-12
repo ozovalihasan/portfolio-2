@@ -60,14 +60,14 @@ const ModalOneProject = ({ projectId, setProjectId }: ModalOneProjectType) => {
                 {project.liveLink && (
                 <LinkButton title="Live Demo Link" href={project.liveLink}>
                   <div className="hidden md:block">
-                    See Live
+                    Live Demo
                   </div>
                   <FontAwesomeIcon icon={['fas', 'paper-plane']} />
                 </LinkButton>
                 )}
                 <LinkButton title="Source Code" href={project.sourceLink}>
                   <div className="hidden md:block">
-                    See Source
+                    Source Code
                   </div>
                   <FontAwesomeIcon icon={['fab', 'github']} />
                 </LinkButton>
