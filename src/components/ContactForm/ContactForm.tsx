@@ -30,7 +30,7 @@ const ContactForm = () => {
     e.preventDefault();
   };
   return (
-    <div id="contact" className='bg-transparent text-fifth md:text-third'>
+    <div className='bg-transparent text-fifth md:text-third'>
       <div>
         <div className='font-bold text-lg'>
           Interested in collaborating

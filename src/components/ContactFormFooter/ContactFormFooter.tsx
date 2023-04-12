@@ -2,7 +2,7 @@ import ContactForm from '../ContactForm/ContactForm';
 import Footer from '../Footer/Footer';
 
 const ContactFormFooter = () => (
-  <div className='relative p-16 bg-third md:bg-transparent text-fifth'>
+  <div id="contact" className='relative p-16 bg-third md:bg-transparent text-fifth'>
     <svg
       viewBox="0 0 210 120"
       preserveAspectRatio="none"
