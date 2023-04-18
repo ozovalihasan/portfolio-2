@@ -134,27 +134,27 @@ const initialState: StateType = {
     {
       name: 'Github',
       link: 'https://github.com/ozovalihasan',
-      icon: ['fab', 'github'] as IconProp,
+      icon: ['fab', 'github'],
     },
     {
       name: 'Linkedin',
       link: 'https://www.linkedin.com/in/hasan-ozovali/',
-      icon: ['fab', 'linkedin'] as IconProp,
+      icon: ['fab', 'linkedin'],
     },
     {
       name: 'Angellist',
       link: 'https://angel.co/u/hasan-ozovali',
-      icon: ['fab', 'angellist'] as IconProp,
+      icon: ['fab', 'angellist'],
     },
     {
       name: 'Twitter',
       link: 'https://twitter.com/ozovalihasan',
-      icon: ['fab', 'twitter'] as IconProp,
+      icon: ['fab', 'twitter'],
     },
     {
       name: 'Resume',
       link: 'https://drive.google.com/file/d/153IJHzt8K-sMMl_U3C36bQC4QUxd7gDP/view?usp=sharing',
-      icon: ['fas', 'file-alt'] as IconProp,
+      icon: ['fas', 'file-alt'],
     },
   ],
 };
