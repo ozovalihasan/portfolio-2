@@ -1,34 +1,19 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { createContext } from 'react';
 import EADImage from "../assets/EAD-portfolio.webp"
 import project0Image from "../assets/project0.webp"
 import project1Image from "../assets/project1.webp"
 import project4Image from "../assets/project4.webp"
 
-type StateType = {
-  projects: {
-    id: number;
-    name: 'EAD' | 'Dr. Ti' | 'Whistle' | 'Escape';
-    description: string;
-    projectImage: string;
-    usedLanguages: string[];
-    liveLink: string;
-    sourceLink: string;
-  }[],
-  skills: {
-    name: string;
-    items: string[];
-  }[],
-  socialLinks: {
-    name: string;
-    link: string;
-    icon: IconProp;
-  }[]
-
+export const routes = {
+  ead: 'https://ead.ozovalihasan.com/',
+  "dr-ti": "https://dr-ti.ozovalihasan.com/",
+  whistle: "https://whiistle.fly.dev/",
+  "whistle-doc": "https://whiistle.fly.dev/api/docs",
+  escape: "https://escape.ozovalihasan.com/",
 }
 
 
-const initialState: StateType = {
+const initialState = {
   projects: [
     {
       id: 0,
@@ -43,7 +28,7 @@ const initialState: StateType = {
         'Ruby',
         'Vite',
       ],
-      liveLink: 'https://ead.ozovalihasan.com/',
+      liveLink: routes["ead"],
       sourceLink: 'https://github.com/ozovalihasan/ead/#readme',
     },
     {
@@ -57,7 +42,7 @@ const initialState: StateType = {
         'Chart.js',
         'Ruby on Rails',
       ],
-      liveLink: 'https://dr-ti.ozovalihasan.com/',
+      liveLink: routes["dr-ti"],
       sourceLink: 'https://github.com/ozovalihasan/track',
     },
     {
@@ -70,7 +55,7 @@ const initialState: StateType = {
         'Ruby',
         'Ruby on Rails',
       ],
-      liveLink: 'https://whiistle.fly.dev/',
+      liveLink: routes["whistle"],
       sourceLink: 'https://github.com/ozovalihasan/whistle#readme',
     },
     {
@@ -82,7 +67,7 @@ const initialState: StateType = {
         'JavaScript',
         'Phaser 3',
       ],
-      liveLink: 'https://escape.ozovalihasan.com/',
+      liveLink: routes["escape"],
       sourceLink: 'https://github.com/ozovalihasan/escape-rpg-game#readme',
     },
   ],
@@ -151,6 +136,7 @@ const initialState: StateType = {
     },
   ],
 };
+
 const store = createContext(initialState);
 
 export type ThemeContextType = { theme: 'light' | "dark", toggleTheme: () => void }
