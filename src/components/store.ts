@@ -8,8 +8,8 @@ import project4Image from "../assets/project4.webp"
 export const routes = {
   ead: 'https://ead.ozovalihasan.com/',
   "dr-ti": "https://dr-ti.ozovalihasan.com/",
+  "dr-ti-api-docs": "https://dr-ti-api.fly.dev/api/docs",
   whistle: "https://whiistle.fly.dev/",
-  "whistle-doc": "https://whiistle.fly.dev/api/docs",
   escape: "https://escape.ozovalihasan.com/",
 }
 
