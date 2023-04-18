@@ -1,3 +1,4 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { createContext } from 'react';
 import EADImage from "../assets/EAD-portfolio.webp"
 import project0Image from "../assets/project0.webp"
@@ -12,8 +13,29 @@ export const routes = {
   escape: "https://escape.ozovalihasan.com/",
 }
 
+type StateType = {
+  projects: {
+    id: number;
+    name: 'EAD' | 'Dr. Ti' | 'Whistle' | 'Escape';
+    description: string;
+    projectImage: string;
+    usedLanguages: string[];
+    liveLink: string;
+    sourceLink: string;
+  }[],
+  skills: {
+    name: string;
+    items: string[];
+  }[],
+  socialLinks: {
+    name: string;
+    link: string;
+    icon: IconProp;
+  }[]
 
-const initialState = {
+}
+
+const initialState: StateType = {
   projects: [
     {
       id: 0,
@@ -112,27 +134,27 @@ const initialState = {
     {
       name: 'Github',
       link: 'https://github.com/ozovalihasan',
-      icon: ['fab', 'github'],
+      icon: ['fab', 'github'] as IconProp,
     },
     {
       name: 'Linkedin',
       link: 'https://www.linkedin.com/in/hasan-ozovali/',
-      icon: ['fab', 'linkedin'],
+      icon: ['fab', 'linkedin'] as IconProp,
     },
     {
       name: 'Angellist',
       link: 'https://angel.co/u/hasan-ozovali',
-      icon: ['fab', 'angellist'],
+      icon: ['fab', 'angellist'] as IconProp,
     },
     {
       name: 'Twitter',
       link: 'https://twitter.com/ozovalihasan',
-      icon: ['fab', 'twitter'],
+      icon: ['fab', 'twitter'] as IconProp,
     },
     {
       name: 'Resume',
       link: 'https://drive.google.com/file/d/153IJHzt8K-sMMl_U3C36bQC4QUxd7gDP/view?usp=sharing',
-      icon: ['fas', 'file-alt'],
+      icon: ['fas', 'file-alt'] as IconProp,
     },
   ],
 };
