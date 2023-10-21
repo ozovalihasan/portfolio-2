@@ -149,7 +149,7 @@ const initialState: StateType = {
     {
       name: 'Twitter',
       link: 'https://twitter.com/ozovalihasan',
-      icon: ['fab', 'twitter'],
+      icon: ['fab', 'x-twitter'],
     },
     {
       name: 'Resume',

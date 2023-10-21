@@ -1,7 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
-  faAngellist, faGithub, faLinkedin, faTwitter,
+  faAngellist, faGithub, faLinkedin, faXTwitter
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faFileAlt, faPaperPlane, faSun, faMoon, faTimes, faSearch,
@@ -19,7 +19,7 @@ import ContactFormFooter from '../ContactFormFooter/ContactFormFooter';
 
 
 library.add(faGithub, faLinkedin, faAngellist,
-  faTwitter, faFileAlt, faPaperPlane,
+  faXTwitter, faFileAlt, faPaperPlane,
   faSun, faMoon, faTimes, faSearch);
 
 const MainPage = () => {
