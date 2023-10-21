@@ -1,10 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './components/App/App'
 import "./main.css"
+import App from './components/App/App';
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const Base = () => (
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+)
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <Base></Base>,
 )

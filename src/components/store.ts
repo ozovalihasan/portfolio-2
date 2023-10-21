@@ -3,14 +3,20 @@ import { createContext } from 'react';
 import EADImage from "../assets/EAD-portfolio.webp"
 import project0Image from "../assets/project0.webp"
 import project1Image from "../assets/project1.webp"
-import project2Image from "../assets/project2.webp"
 import project4Image from "../assets/project4.webp"
-import project5Image from "../assets/project5.webp"
+
+export const routes = {
+  ead: 'https://ead.ozovalihasan.com/',
+  "dr-ti": "https://dr-ti.ozovalihasan.com/",
+  "dr-ti-api-docs": "https://dr-ti-api.fly.dev/api/docs",
+  whistle: "https://whiistle.fly.dev/",
+  escape: "https://escape.ozovalihasan.com/",
+}
 
 type StateType = {
   projects: {
     id: number;
-    name: string;
+    name: 'EAD' | 'Dr. Ti' | 'Whistle' | 'Escape';
     description: string;
     projectImage: string;
     usedLanguages: string[];
@@ -29,7 +35,6 @@ type StateType = {
 
 }
 
-
 const initialState: StateType = {
   projects: [
     {
@@ -45,7 +50,7 @@ const initialState: StateType = {
         'Ruby',
         'Vite',
       ],
-      liveLink: 'https://ead.ozovalihasan.com/',
+      liveLink: routes["ead"],
       sourceLink: 'https://github.com/ozovalihasan/ead/#readme',
     },
     {
@@ -59,7 +64,7 @@ const initialState: StateType = {
         'Chart.js',
         'Ruby on Rails',
       ],
-      liveLink: 'https://dr-ti.ozovalihasan.com/',
+      liveLink: routes["dr-ti"],
       sourceLink: 'https://github.com/ozovalihasan/track',
     },
     {
@@ -72,7 +77,7 @@ const initialState: StateType = {
         'Ruby',
         'Ruby on Rails',
       ],
-      liveLink: 'https://whiistle.fly.dev/',
+      liveLink: routes["whistle"],
       sourceLink: 'https://github.com/ozovalihasan/whistle#readme',
     },
     {
@@ -84,7 +89,7 @@ const initialState: StateType = {
         'JavaScript',
         'Phaser 3',
       ],
-      liveLink: 'https://escape.ozovalihasan.com/',
+      liveLink: routes["escape"],
       sourceLink: 'https://github.com/ozovalihasan/escape-rpg-game#readme',
     },
   ],
@@ -144,7 +149,7 @@ const initialState: StateType = {
     {
       name: 'Twitter',
       link: 'https://twitter.com/ozovalihasan',
-      icon: ['fab', 'twitter'],
+      icon: ['fab', 'x-twitter'],
     },
     {
       name: 'Resume',
@@ -153,6 +158,7 @@ const initialState: StateType = {
     },
   ],
 };
+
 const store = createContext(initialState);
 
 export type ThemeContextType = { theme: 'light' | "dark", toggleTheme: () => void }

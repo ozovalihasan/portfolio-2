@@ -28,7 +28,7 @@ const Intro = () => (
           </h2>
           <p className='text-xl pb-8'>
             I can help you build a product, feature, or website.
-            I am looking for new opportunities.
+            I'm already working at Paraşüt.
           </p>
           
           <SocialLinks />
